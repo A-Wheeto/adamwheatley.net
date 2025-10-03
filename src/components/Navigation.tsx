@@ -22,7 +22,7 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+      <nav className="fixed top-0 w-full z-50 bg-stone-100/90 dark:bg-stone-900/90 backdrop-blur-md border-b border-stone-300 dark:border-stone-700">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link
             href="/"
