@@ -95,6 +95,14 @@ export default function HomePage() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [grades.length])
 
+
+  const scrollToSection = (index: number) => {
+    sectionRefs.current[index]?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    })
+  }
+
   return (
     <>
       <main className="relative">
@@ -123,12 +131,14 @@ export default function HomePage() {
           {/* Climbing progress dots with hold shapes */}
           <div className="flex flex-col gap-2">
             {grades.map((grade, index) => (
-              <div
+              <button
                 key={index}
-                className={`w-4 h-4 transition-all duration-300 rounded-full ${index <= currentGrade
-                    ? grade.holdColor
-                    : 'bg-stone-300 dark:bg-stone-700'
+                onClick={() => scrollToSection(index)}
+                className={`w-4 h-4 transition-all duration-300 rounded-full cursor-pointer hover:scale-125 ${index <= currentGrade
+                  ? grade.holdColor
+                  : 'bg-stone-300 dark:bg-stone-700'
                   } ${index === currentGrade ? 'scale-150 animate-pulse' : ''}`}
+                aria-label={`Jump to ${grade.grade}`}
               />
             ))}
           </div>
@@ -144,12 +154,14 @@ export default function HomePage() {
             {/* Climbing progress dots - horizontal on mobile with hold shapes */}
             <div className="flex gap-2">
               {grades.map((grade, index) => (
-                <div
+                <button
                   key={index}
-                  className={`w-3 h-3 transition-all duration-300 rounded-full ${index <= currentGrade
-                      ? grade.holdColor
-                      : 'bg-stone-300 dark:bg-stone-700'
+                  onClick={() => scrollToSection(index)}
+                  className={`w-3 h-3 transition-all duration-300 rounded-full cursor-pointer hover:scale-125 ${index <= currentGrade
+                    ? grade.holdColor
+                    : 'bg-stone-300 dark:bg-stone-700'
                     } ${index === currentGrade ? 'scale-150 animate-pulse' : ''}`}
+                  aria-label={`Jump to ${grade.grade}`}
                 />
               ))}
             </div>
@@ -263,23 +275,6 @@ export default function HomePage() {
                       </>
                     )}
                   </div>
-
-                  {/* Climb to next level button - show on all except last */}
-                  {index < grades.length - 1 && (
-                    <div className="mt-8 flex justify-center">
-                      <button
-                        onClick={() => {
-                          window.scrollTo({
-                            top: window.innerHeight * (index + 1),
-                            behavior: 'smooth'
-                          });
-                        }}
-                        className={`px-6 py-3 bg-gradient-to-r ${grade.color} text-white rounded-lg font-bold uppercase tracking-wide shadow-lg hover:scale-105 transition flex items-center gap-2`}
-                      >
-                        Climb to Next Level
-                      </button>
-                    </div>
-                  )}
 
                   {/* CTA on last section */}
                   {index === grades.length - 1 && (
