@@ -96,261 +96,208 @@ export default function HomePage() {
   }, [grades.length])
 
   return (
-    <main className="relative bg-green-50 dark:bg-stone-950">
-      {/* Fixed Progress Indicator - Hidden on mobile */}
-      <div className="fixed top-10 left-8 z-40 space-y-4 hidden md:block">
-        <div className="bg-white/90 dark:bg-stone-900/90 backdrop-blur rounded-lg p-4 shadow-lg">
-          <p className="text-xs uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2">
-            Current Grade
-          </p>
-          <div className="text-2xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-            {grades[currentGrade].grade}
+    <>
+      <main className="relative">
+        <div
+          className="fixed inset-0 -z-10"
+          style={{
+            backgroundImage: 'url("/background.png")',
+            backgroundRepeat: 'repeat',
+            backgroundSize: 'auto',
+            opacity: 0.3,
+            filter: 'saturate(0.5) hue-rotate(120deg)'
+          }}
+        />
+
+        {/* Fixed Progress Indicator - Desktop (left side) */}
+        <div className="fixed top-10 left-8 z-40 space-y-4 hidden md:block">
+          <div className="bg-white/90 dark:bg-stone-900/90 backdrop-blur rounded-lg p-4 shadow-lg">
+            <p className="text-xs uppercase tracking-wider text-stone-600 dark:text-stone-400 mb-2">
+              Current Grade
+            </p>
+            <div className="text-2xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+              {grades[currentGrade].grade}
+            </div>
+          </div>
+
+          {/* Climbing progress dots with hold shapes */}
+          <div className="flex flex-col gap-2">
+            {grades.map((grade, index) => (
+              <div
+                key={index}
+                className={`w-4 h-4 transition-all duration-300 rounded-full ${index <= currentGrade
+                    ? grade.holdColor
+                    : 'bg-stone-300 dark:bg-stone-700'
+                  } ${index === currentGrade ? 'scale-150 animate-pulse' : ''}`}
+              />
+            ))}
           </div>
         </div>
 
-        {/* Climbing progress dots */}
-        <div className="flex flex-col gap-2">
+        {/* Fixed Progress Indicator - Mobile (bottom) */}
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 md:hidden">
+          <div className="bg-white/90 dark:bg-stone-900/90 backdrop-blur rounded-full px-6 py-3 shadow-lg flex items-center gap-4">
+            <div className="text-lg font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+              {grades[currentGrade].grade}
+            </div>
+
+            {/* Climbing progress dots - horizontal on mobile with hold shapes */}
+            <div className="flex gap-2">
+              {grades.map((grade, index) => (
+                <div
+                  key={index}
+                  className={`w-3 h-3 transition-all duration-300 rounded-full ${index <= currentGrade
+                      ? grade.holdColor
+                      : 'bg-stone-300 dark:bg-stone-700'
+                    } ${index === currentGrade ? 'scale-150 animate-pulse' : ''}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Scrollable Content Sections */}
+        <div className="relative z-10">
           {grades.map((grade, index) => (
-            <div
+            <section
               key={index}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${index <= currentGrade
-                ? grade.holdColor
-                : 'bg-stone-300 dark:bg-stone-700'
-                } ${index === currentGrade ? 'scale-150 animate-pulse' : ''}`}
-            />
+              ref={(el) => {
+                sectionRefs.current[index] = el;
+              }}
+              className="min-h-screen flex items-center justify-center px-6 relative"
+            >
+              <div className="max-w-4xl w-full">
+                <div className="bg-white/95 dark:bg-stone-900/95 backdrop-blur-md p-8 md:p-12 shadow-xl transition-all duration-500 border-2 border-stone-300 dark:border-stone-700 rounded-2xl">
+                  {/* Grade Badge */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className={`px-4 py-2 rounded-full font-bold text-white bg-gradient-to-r ${grade.color} shadow-lg`}>
+                      {grade.grade}
+                    </span>
+                    <span className="text-sm uppercase tracking-wider text-stone-500 dark:text-stone-400">
+                      {grade.year}
+                    </span>
+                  </div>
+
+                  {/* Role Title */}
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                    <span className={`bg-gradient-to-r ${grade.color} bg-clip-text text-transparent`}>
+                      {grade.role}
+                    </span>
+                  </h2>
+
+                  {/* Description */}
+                  <p className="text-lg text-stone-700 dark:text-stone-300 mb-8">
+                    {grade.description}
+                  </p>
+
+                  {/* Skills/Achievements for this level */}
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {index === 0 && (
+                      <>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Bouldering Enthusiast</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Guitarist</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Drummer</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Problem Solver</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Creative Thinker</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Detail Oriented</span>
+                      </>
+                    )}
+                    {index === 1 && (
+                      <>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">High Volume Support</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Windows 7/10</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Citrix & RDP</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Active Directory</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Mobile Support</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Ticket Management</span>
+                      </>
+                    )}
+                    {index === 2 && (
+                      <>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">2000+ Users</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Multi-Platform</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Mac OS</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Chromebooks</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">User Training</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Multi-Site Support</span>
+                      </>
+                    )}
+                    {index === 3 && (
+                      <>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">SharePoint Design</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">MS Data Sync</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">MIS Integration</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Client Onboarding</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Permissions Mgmt</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Consultations</span>
+                      </>
+                    )}
+                    {index === 4 && (
+                      <>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Azure AD</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">MS Dynamics</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">SharePoint Migration</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Infrastructure</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Linux</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Intune</span>
+                      </>
+                    )}
+                    {index === 5 && (
+                      <>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Ruby on Rails</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">JavaScript/Stimulus</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">RSpec</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Heroku</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">API Integration</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">MS Dynamics</span>
+                      </>
+                    )}
+                    {index === 6 && (
+                      <>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Next.js</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">TypeScript</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Full Stack</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Cloud Deploy</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">CI/CD</span>
+                        <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm border-1 flex items-center justify-center text-center">Vercel</span>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Climb to next level button - show on all except last */}
+                  {index < grades.length - 1 && (
+                    <div className="mt-8 flex justify-center">
+                      <button
+                        onClick={() => {
+                          window.scrollTo({
+                            top: window.innerHeight * (index + 1),
+                            behavior: 'smooth'
+                          });
+                        }}
+                        className={`px-6 py-3 bg-gradient-to-r ${grade.color} text-white rounded-lg font-bold uppercase tracking-wide shadow-lg hover:scale-105 transition flex items-center gap-2`}
+                      >
+                        Climb to Next Level
+                      </button>
+                    </div>
+                  )}
+
+                  {/* CTA on last section */}
+                  {index === grades.length - 1 && (
+                    <div className="mt-8 flex justify-center">
+                      <a
+                        href="/projects"
+                        className="px-8 py-4 bg-gradient-to-r from-green-700 to-emerald-700 text-white rounded-lg font-bold uppercase tracking-wide shadow-lg hover:scale-105 transition text-center"
+                      >
+                        View My Routes (Projects)
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </section>
           ))}
         </div>
-      </div>
-
-      {/* Abstract Mountain Shape - Fixed on right side */}
-      <div className="fixed right-0 top-0 h-full w-[10vw] z-0 overflow-hidden pointer-events-none">
-        <svg
-          className="h-full w-full"
-          viewBox="0 0 100 1000"
-          preserveAspectRatio="none"
-          style={{ transform: 'translateX(-2px)' }}
-        >
-          <defs>
-            <linearGradient id="mountainGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="rgb(220, 220, 220)" stopOpacity="0.15" />
-              <stop offset="50%" stopColor="rgb(200, 200, 200)" stopOpacity="0.1" />
-              <stop offset="100%" stopColor="rgb(180, 180, 180)" stopOpacity="0.05" />
-            </linearGradient>
-            <linearGradient id="mountainGradientDark" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="rgb(100, 100, 100)" stopOpacity="0.2" />
-              <stop offset="50%" stopColor="rgb(80, 80, 80)" stopOpacity="0.15" />
-              <stop offset="100%" stopColor="rgb(60, 60, 60)" stopOpacity="0.1" />
-            </linearGradient>
-          </defs>
-
-          {/* Mountain silhouette path */}
-          <path
-            d="M 100 0 
-               L 85 50 
-               L 90 120 
-               L 75 180 
-               L 82 250 
-               L 70 320 
-               L 88 400 
-               L 72 480 
-               L 85 550 
-               L 68 620 
-               L 80 700 
-               L 75 780 
-               L 90 850 
-               L 85 920 
-               L 100 1000 
-               L 100 0 Z"
-            className="fill-stone-200/20 dark:fill-stone-800/30"
-          />
-
-          {/* Secondary layer for depth */}
-          <path
-            d="M 100 100 
-               L 92 150 
-               L 95 220 
-               L 88 280 
-               L 93 350 
-               L 85 420 
-               L 92 500 
-               L 87 580 
-               L 91 650 
-               L 86 720 
-               L 92 800 
-               L 88 880 
-               L 95 950 
-               L 100 1000 
-               L 100 100 Z"
-            className="fill-stone-300/10 dark:fill-stone-700/20"
-          />
-        </svg>
-      </div>
-
-      {/* Scrollable Content Sections */}
-      <div className="relative z-10">
-        {grades.map((grade, index) => (
-          <section
-            key={index}
-            ref={(el) => {
-              sectionRefs.current[index] = el;
-            }}
-            className="min-h-screen flex items-center justify-center px-6 relative"
-          >
-            {/* Floating holds for each section */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className={`absolute top-20 left-1/4 w-16 h-16 ${grade.holdColor} rounded-full opacity-20 transform rotate-12 shadow-lg`} />
-              <div className={`absolute bottom-20 right-1/3 w-20 h-14 ${grade.holdColor} opacity-20 transform -rotate-6 shadow-lg`}
-                style={{ borderRadius: '60% 40% 70% 30%' }} />
-              <div className={`absolute top-1/2 right-1/4 w-14 h-18 ${grade.holdColor} opacity-20 transform rotate-45 shadow-lg rounded-lg`} />
-            </div>
-
-            <div className="max-w-4xl w-full">
-              <div className="bg-white/95 dark:bg-stone-900/95 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-xl transform transition-all duration-500 hover:scale-105 border border-stone-200/50 dark:border-stone-800/50">
-                {/* Grade Badge */}
-                <div className="flex items-center gap-4 mb-6">
-                  <span className={`px-4 py-2 rounded-full font-bold text-white bg-gradient-to-r ${grade.color}`}>
-                    {grade.grade}
-                  </span>
-                  <span className="text-sm uppercase tracking-wider text-stone-500 dark:text-stone-400">
-                    {grade.year}
-                  </span>
-                </div>
-
-                {/* Role Title */}
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  <span className={`bg-gradient-to-r ${grade.color} bg-clip-text text-transparent`}>
-                    {grade.role}
-                  </span>
-                </h2>
-
-                {/* Description */}
-                <p className="text-lg text-stone-700 dark:text-stone-300 mb-8">
-                  {grade.description}
-                </p>
-
-                {/* Skills/Achievements for this level */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {index === 0 && (
-                    <>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🧗 Bouldering Enthusiast</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🎸 Guitarist</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🥁 Drummer</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">💻 Problem Solver</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🚀 Creative Thinker</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🎯 Detail Oriented</span>
-                    </>
-                  )}
-                  {index === 1 && (
-                    <>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">☎️ High Volume Support</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🖥️ Windows 7/10</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">☁️ Citrix & RDP</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🗂️ Active Directory</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">📱 Mobile Support</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🎫 Ticket Management</span>
-                    </>
-                  )}
-                  {index === 2 && (
-                    <>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">👥 2000+ Users</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🖥️ Multi-Platform</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🍎 Mac OS</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">📱 Chromebooks</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🎓 User Training</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🏢 Multi-Site Support</span>
-                    </>
-                  )}
-                  {index === 3 && (
-                    <>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">☁️ SharePoint Design</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🔄 MS Data Sync</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🏫 MIS Integration</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🚀 Client Onboarding</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🔐 Permissions Mgmt</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">💼 Consultations</span>
-                    </>
-                  )}
-                  {index === 4 && (
-                    <>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">☁️ Azure AD</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">📊 MS Dynamics</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🔄 SharePoint Migration</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🖥️ Infrastructure</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🐧 Linux</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">📱 Intune</span>
-                    </>
-                  )}
-                  {index === 5 && (
-                    <>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">💎 Ruby on Rails</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">⚡ JavaScript/Stimulus</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🧪 RSpec (96% coverage)</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🚀 Heroku</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🔌 API Integration</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">📊 MS Dynamics</span>
-                    </>
-                  )}
-                  {index === 6 && (
-                    <>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">⚡ Next.js</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🎨 TypeScript</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🚀 Full Stack</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">☁️ Cloud Deploy</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🔄 CI/CD</span>
-                      <span className="px-3 py-2 bg-stone-100 dark:bg-stone-800 rounded-lg text-sm">🎸 Music & Climbing</span>
-                    </>
-                  )}
-                </div>
-
-                {/* CTA on first section */}
-                {index === 0 && (
-                  <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                    <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-                      }}
-                      className="px-8 py-4 bg-gradient-to-r from-gray-600 to-gray-500 text-white rounded-lg font-bold uppercase tracking-wide shadow-lg hover:scale-105 transition text-center"
-                    >
-                      Start the Journey ↓
-                    </a>
-                  </div>
-                )}
-
-                {/* CTA on last section */}
-                {index === grades.length - 1 && (
-                  <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                    <a
-                      href="/projects"
-                      className="px-8 py-4 bg-gradient-to-r from-green-700 to-emerald-700 text-white rounded-lg font-bold uppercase tracking-wide shadow-lg hover:scale-105 transition text-center"
-                    >
-                      View My Routes (Projects)
-                    </a>
-                    <a
-                      href="/contact"
-                      className="px-8 py-4 border-2 border-green-600 text-green-700 dark:text-green-400 rounded-lg font-bold uppercase tracking-wide shadow-lg hover:scale-105 transition text-center"
-                    >
-                      Find a Belay Partner
-                    </a>
-                  </div>
-                )}
-              </div>
-            </div>
-          </section>
-        ))}
-      </div>
-
-      {/* Scroll indicator - hides when at bottom */}
-      {scrollProgress < 0.98 && (
-        <div className="fixed bottom-8 right-8 z-40">
-          <div className="bg-white/90 dark:bg-stone-900/90 backdrop-blur rounded-full p-3 shadow-lg animate-bounce">
-            <svg className="w-6 h-6 text-stone-600 dark:text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
-        </div>
-      )}
-    </main>
+      </main>
+    </>
   )
 }
