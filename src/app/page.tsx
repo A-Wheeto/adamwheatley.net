@@ -135,8 +135,8 @@ export default function HomePage() {
         </div>
 
         {/* Fixed Progress Indicator - Mobile (bottom) */}
-        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 md:hidden">
-          <div className="bg-white/90 dark:bg-stone-900/90 backdrop-blur rounded-full px-6 py-3 shadow-lg flex items-center gap-4">
+        <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden">
+          <div className="bg-white/90 dark:bg-stone-900/90 backdrop-blur px-6 py-3 shadow-lg flex items-center gap-4 justify-between">
             <div className="text-lg font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
               {grades[currentGrade].grade}
             </div>
@@ -167,7 +167,7 @@ export default function HomePage() {
               className="min-h-screen flex items-center justify-center px-8 md:px-8 lg:px-12 relative"
             >
               <div className="max-w-4xl w-full">
-                <div className="bg-white/95 dark:bg-stone-900/95 backdrop-blur-md p-6 md:p-12 shadow-xl transition-all duration-500 border-2 border-stone-300 dark:border-stone-700 rounded-2xl">
+                <div className="bg-white/95 dark:bg-stone-900/95 backdrop-blur-md p-4 md:p-12 shadow-xl transition-all duration-500 border-2 border-stone-300 dark:border-stone-700 rounded-2xl">
                   {/* Grade Badge */}
                   <div className="flex items-center gap-4 mb-6">
                     <span className={`px-4 py-2 rounded-full font-bold text-white bg-gradient-to-r ${grade.color} shadow-lg`}>
