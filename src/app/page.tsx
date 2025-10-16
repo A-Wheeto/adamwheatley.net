@@ -164,10 +164,10 @@ export default function HomePage() {
               ref={(el) => {
                 sectionRefs.current[index] = el;
               }}
-              className="min-h-screen flex items-center justify-center px-2 md:px-8 lg:px-12 relative"
+              className="min-h-screen flex items-center justify-center px-8 md:px-8 lg:px-12 relative"
             >
               <div className="max-w-4xl w-full">
-                <div className="bg-white/95 dark:bg-stone-900/95 backdrop-blur-md p-4 md:p-12 shadow-xl transition-all duration-500 border-2 border-stone-300 dark:border-stone-700 rounded-2xl">
+                <div className="bg-white/95 dark:bg-stone-900/95 backdrop-blur-md p-6 md:p-12 shadow-xl transition-all duration-500 border-2 border-stone-300 dark:border-stone-700 rounded-2xl">
                   {/* Grade Badge */}
                   <div className="flex items-center gap-4 mb-6">
                     <span className={`px-4 py-2 rounded-full font-bold text-white bg-gradient-to-r ${grade.color} shadow-lg`}>
