@@ -9,8 +9,18 @@ export const metadata: Metadata = {
     default: 'Adam Wheatley | Full-Stack Developer',
     template: '%s | Adam Wheatley'
   },
-  description: 'Portfolio showcasing my web development projects and skills',
-  keywords: ['web developer', 'portfolio', 'full-stack', 'react', 'nextjs'],
+  description: 'Full-Stack Developer specializing in Ruby on Rails and Next.js. Journey from IT support to development, showcasing projects and climbing the grades of web development.',
+  keywords: ['Adam Wheatley', 'full-stack developer', 'web developer', 'Ruby on Rails', 'Next.js', 'React', 'TypeScript', 'portfolio'],
+  authors: [{ name: 'Adam Wheatley' }],
+  creator: 'Adam Wheatley',
+  openGraph: {
+    type: 'website',
+    locale: 'en_GB',
+    url: 'https://adamwheatley.net',
+    title: 'Adam Wheatley | Full-Stack Developer',
+    description: 'Full-Stack Developer specializing in Ruby on Rails and Next.js',
+    siteName: 'Adam Wheatley Portfolio',
+  },
 }
 
 export default function RootLayout({
