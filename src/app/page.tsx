@@ -55,8 +55,8 @@ export default function HomePage() {
           style={{
             backgroundImage: 'url("/background.png")',
             backgroundRepeat: 'repeat',
-            backgroundSize: 'auto',
             opacity: 0.7,
+            backgroundSize: 'clamp(400px, 50vw, 800px)',
           }}
         />
 

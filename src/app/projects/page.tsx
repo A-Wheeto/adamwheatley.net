@@ -24,7 +24,7 @@ export default function ProjectsPage() {
         style={{
           backgroundImage: 'url("/background.png")',
           backgroundRepeat: 'repeat',
-          backgroundSize: 'auto',
+          backgroundSize: 'clamp(400px, 50vw, 800px)',
           opacity: 0.7,
         }}
       />
