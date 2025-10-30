@@ -4,7 +4,7 @@ export const careerGrades: Grade[] = [
   {
     grade: 'V0',
     role: 'Adam Wheatley',
-    description: "Full-Stack Developer with a passion for building elegant solutions. This is my journey from IT support to full-stack development - a climb that's taught me persistence, problem-solving, and the value of finding the right approach. Just like in bouldering, every problem has a solution; sometimes you just need to find the right sequence.",
+    description: "Welcome to my climbing journey. In bouldering, grades start at V0 and progress upward with difficulty. This portfolio mirrors that system—each section represents a grade in my career climb from IT support to full-stack development. Like solving a challenging boulder problem, every role taught me that persistence and the right approach can overcome any obstacle.",
     color: 'from-stone-600 to-stone-500',
     holdColor: 'bg-stone-500',
     year: 'The Journey Begins',
