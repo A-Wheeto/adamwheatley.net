@@ -50,7 +50,7 @@ export default function ProjectsPage() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-stone-800 dark:text-stone-200 font-medium">
-            Projects I've climbed and conquered
+            Projects I&apos;ve climbed and conquered
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export default function ProjectsPage() {
               Currently Climbing
             </h2>
             <p className="text-sm md:text-base text-stone-800 dark:text-stone-200 mb-6 font-medium">
-              Technologies I'm actively learning and exploring
+              Technologies I&apos;m actively learning and exploring
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {learningSkills.map((skill, index) => (
