@@ -7,31 +7,27 @@ interface CareerCardProps {
 
 export default function CareerCard({ grade, isLastSection }: CareerCardProps) {
   return (
-    <div className="relative bg-gradient-to-br from-stone-50 to-stone-100 dark:from-stone-900 dark:to-stone-800 backdrop-blur-md p-4 md:p-8 lg:p-12 shadow-2xl transition-all duration-500 border border-stone-200 dark:border-stone-700 rounded-3xl overflow-hidden group hover:shadow-emerald-500/10 hover:border-emerald-600/30">
-      {/* Subtle texture overlay */}
-      <div className="absolute inset-0 opacity-[0.02] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iMSI+PHBhdGggZD0iTTM2IDE4YzAgNi42MjctNS4zNzMgMTItMTIgMTJzLTEyLTUuMzczLTEyLTEyIDUuMzczLTEyIDEyLTEyIDEyIDUuMzczIDEyIDEyeiIvPjwvZz48L2c+PC9zdmc+')]"></div>
-
+    <div className="relative backdrop-blur-md bg-white/40 dark:bg-stone-900/60 p-4 md:p-8 lg:p-12 shadow-2xl transition-all duration-500 border-2 border-stone-300 dark:border-stone-600 rounded-3xl overflow-hidden group hover:shadow-emerald-500/20 hover:border-emerald-600/50 hover:border-emerald-600 dark:hover:border-emerald-500">
       <div className="relative z-10">
         {/* Grade Badge */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mb-4 md:mb-6">
           <span className={`relative px-4 py-2 md:px-5 md:py-2.5 rounded-2xl font-bold text-white bg-gradient-to-br ${grade.color} shadow-lg text-sm md:text-base transform transition-transform group-hover:scale-105`}>
             {grade.grade}
           </span>
-          <span className="text-xs md:text-sm uppercase tracking-wider text-stone-500 dark:text-stone-400 font-medium">
+          <span className="text-xs md:text-sm uppercase tracking-wider text-stone-600 dark:text-stone-300 font-medium">
             {grade.year}
           </span>
         </div>
 
-        {/* Role Title with subtle underline */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 leading-tight relative inline-block">
+        {/* Role Title */}
+        <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 leading-tight">
           <span className={`bg-gradient-to-r ${grade.color} bg-clip-text text-transparent`}>
             {grade.role}
           </span>
-          <div className={`h-1 w-1/3 bg-gradient-to-r ${grade.color} opacity-20 rounded-full mt-2`}></div>
         </h2>
 
         {/* Description with better spacing */}
-        <p className="text-sm sm:text-base md:text-lg text-stone-600 dark:text-stone-300 mb-4 md:mb-6 lg:mb-8 leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg text-stone-800 dark:text-stone-200 mb-4 md:mb-6 lg:mb-8 leading-relaxed font-medium">
           {grade.description}
         </p>
 
@@ -40,7 +36,7 @@ export default function CareerCard({ grade, isLastSection }: CareerCardProps) {
           {grade.skills.map((skill, index) => (
             <span
               key={index}
-              className="relative px-2 py-2 md:px-3 md:py-2.5 bg-white dark:bg-stone-800 rounded-xl text-xs md:text-sm border border-stone-200 dark:border-stone-700 flex items-center justify-center text-center font-medium text-stone-700 dark:text-stone-300 transition-all hover:border-emerald-500/50 hover:shadow-md group/skill overflow-hidden"
+              className="relative px-2 py-2 md:px-3 md:py-2.5 bg-white/70 dark:bg-stone-800/70 rounded-xl text-xs md:text-sm border-2 border-stone-300 dark:border-stone-600 flex items-center justify-center text-center font-medium text-stone-800 dark:text-stone-200 transition-all hover:border-emerald-500 hover:shadow-md group/skill overflow-hidden"
             >
               {/* Subtle gradient on hover */}
               <div className={`absolute inset-0 bg-gradient-to-br ${grade.color} opacity-0 group-hover/skill:opacity-5 transition-opacity`}></div>
