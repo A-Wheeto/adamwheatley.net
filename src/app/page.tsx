@@ -56,8 +56,7 @@ export default function HomePage() {
             backgroundImage: 'url("/background.png")',
             backgroundRepeat: 'repeat',
             backgroundSize: 'auto',
-            opacity: 0.3,
-            filter: 'saturate(0.5) hue-rotate(120deg)'
+            opacity: 0.7,
           }}
         />
 
