@@ -16,16 +16,13 @@ export default function ProgressIndicator({
   if (variant === 'desktop') {
     return (
       <div className="fixed top-10 left-8 z-40 space-y-4 hidden md:block">
-        <div className="bg-white/95 dark:bg-stone-900/95 backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-stone-200 dark:border-stone-700">
-          <p className="text-xs uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2 font-medium">
-            Current Grade
-          </p>
+        <div className="bg-white/95 dark:bg-stone-900/95 backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-stone-200 dark:border-stone-700 w-fit">
           <div className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-green-700 bg-clip-text text-transparent">
             {grades[currentGrade].grade}
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 bg-white/95 dark:bg-stone-900/95 backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-stone-200 dark:border-stone-700">
+        <div className="flex flex-col gap-3 bg-white/95 dark:bg-stone-900/95 backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-stone-200 dark:border-stone-700 w-fit">
           {grades.map((grade, index) => (
             <button
               key={index}
