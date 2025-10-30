@@ -31,17 +31,18 @@ export default function ProjectsPage() {
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 sm:px-6 md:px-8 lg:px-12">
+        <Link
+          href="/"
+          className="backdrop-blur-md bg-white/40 dark:bg-stone-900/60 p-3 md:p-3 shadow-2xl border-2 border-stone-300 dark:border-stone-600 rounded-3xl inline-flex items-center gap-2 text-stone-600 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors mb-4 group"
+        >
+          <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to the climb
+        </Link>
         {/* Header */}
-        <div className="mb-12">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-stone-600 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors mb-8 group"
-          >
-            <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Journey
-          </Link>
+        <div className="mb-12 backdrop-blur-md bg-white/40 dark:bg-stone-900/60 p-6 md:p-8 shadow-2xl border-2 border-stone-300 dark:border-stone-600 rounded-3xl">
+
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             <span className="bg-gradient-to-r from-emerald-600 to-green-700 bg-clip-text text-transparent">
@@ -49,7 +50,7 @@ export default function ProjectsPage() {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-stone-800 dark:text-stone-200 font-medium">
-            Projects I&apos;ve climbed and conquered
+            A collection of full-stack applications and solutions I&apos;ve built throughout my development journey. From Ruby on Rails backends to Next.js frontends, each project represents a different challenge conquered - showcasing API integrations, database management, and modern web technologies that have shaped my progression from IT support to full-stack developer.
           </p>
         </div>
 
