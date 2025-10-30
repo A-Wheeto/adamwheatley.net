@@ -30,7 +30,7 @@ export default function ProjectsPage() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-20 sm:px-6 md:px-8 lg:px-12">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-10 sm:px-6 md:px-8 lg:px-12">
         <Link
           href="/"
           className="backdrop-blur-md bg-white/40 dark:bg-stone-900/60 p-3 md:p-3 shadow-2xl border-2 border-stone-300 dark:border-stone-600 rounded-3xl inline-flex items-center gap-2 text-stone-600 dark:text-stone-400 hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors mb-4 group"
