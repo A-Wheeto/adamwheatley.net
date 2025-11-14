@@ -10,11 +10,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative backdrop-blur-md bg-white/40 dark:bg-stone-900/60 p-6 md:p-8 shadow-2xl transition-all duration-500 border-2 border-stone-300 dark:border-stone-600 rounded-3xl overflow-hidden hover:shadow-emerald-500/20 hover:border-emerald-600 dark:hover:border-emerald-500 hover:scale-105 block"
+      className="block p-6 md:p-8 no-underline"
+      style={{ display: 'block' }}
     >
-      <div className="relative z-10">
+      <div className="relative z-10 p-3">
         {/* Project Title */}
-        <h3 className="text-xl md:text-2xl font-bold mb-3 bg-gradient-to-r from-emerald-600 to-green-700 bg-clip-text text-transparent group-hover:from-emerald-500 group-hover:to-green-600 transition-all">
+        <h3 className="text-xl md:text-2xl font-bold mb-3 text-stone-900 dark:text-stone-100">
           {project.title}
         </h3>
 
@@ -24,11 +25,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </p>
 
         {/* Technologies */}
-        <div className="flex flex-wrap gap-2">
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
           {project.technologies.map((tech, index) => (
             <span
               key={index}
-              className="px-3 py-1.5 bg-white/70 dark:bg-stone-800/70 rounded-lg text-xs font-medium text-stone-800 dark:text-stone-200 border border-stone-300 dark:border-stone-600"
+              className="block round fixed px-3 py-1.5 text-xs font-medium text-stone-800 dark:text-stone-200"
+              style={{ display: 'inline-block' }}
             >
               {tech}
             </span>
