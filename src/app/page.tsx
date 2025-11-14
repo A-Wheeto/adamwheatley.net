@@ -81,7 +81,8 @@ export default function HomePage() {
               ref={(el) => {
                 sectionRefs.current[index] = el
               }}
-              className="min-h-screen flex items-center justify-center px-4 pt-20 pb-32 md:pt-20 md:pb-20 sm:px-6 md:px-8 lg:px-12 relative"
+              className={`min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 relative ${index === 0 ? 'pt-4 pb-32 md:pt-20 md:pb-20' : 'pt-20 pb-32 md:pt-20 md:pb-20'
+                }`}
             >
               <div className="max-w-4xl w-full">
                 <CareerCard
