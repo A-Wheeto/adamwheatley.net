@@ -37,3 +37,21 @@ html {
     background: #6b7280;
   }
 }
+
+.progress-desktop {
+  display: none;
+}
+
+.progress-mobile {
+  display: block;
+}
+
+@media (min-width: 1120px) {
+  .progress-desktop {
+    display: block;
+  }
+
+  .progress-mobile {
+    display: none;
+  }
+}

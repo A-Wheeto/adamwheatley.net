@@ -65,6 +65,7 @@ export default function HomePage() {
           currentGrade={currentGrade}
           onGradeClick={scrollToSection}
           variant="desktop"
+          className="progress-desktop"
         />
 
         <ProgressIndicator
@@ -72,6 +73,7 @@ export default function HomePage() {
           currentGrade={currentGrade}
           onGradeClick={scrollToSection}
           variant="mobile"
+          className="progress-mobile"
         />
 
         <div className="relative z-10">
