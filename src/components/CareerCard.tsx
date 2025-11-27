@@ -30,7 +30,7 @@ export default function CareerCard({ grade, isLastSection }: CareerCardProps) {
         </p>
 
         {/* Skills with blocks.css pills */}
-        <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
+        <div className="hidden sm:flex flex-wrap gap-2 md:gap-3 justify-center">
           {grade.skills.map((skill, index) => (
             <span
               key={index}
