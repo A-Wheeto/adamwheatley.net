@@ -1,0 +1,129 @@
+<h2>How should the site be structured?</h2>
+<p class="subtitle">This affects everything — navigation, flow, how visitors experience your story</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="hero-sections" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d1117;padding:0;overflow:hidden;font-family:system-ui,sans-serif;">
+      <!-- Mini nav -->
+      <div style="background:#161b22;padding:6px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #21262d">
+        <span style="color:#00ff41;font-size:9px;font-family:monospace">aw://</span>
+        <div style="display:flex;gap:10px">
+          <span style="color:#8b949e;font-size:8px">work</span>
+          <span style="color:#8b949e;font-size:8px">projects</span>
+          <span style="color:#8b949e;font-size:8px">about</span>
+          <span style="color:#00ff41;font-size:8px">contact</span>
+        </div>
+      </div>
+      <!-- Hero -->
+      <div style="padding:14px 12px;border-bottom:1px solid #21262d">
+        <div style="color:#00ff41;font-size:9px;font-family:monospace;margin-bottom:4px">&gt; whoami</div>
+        <div style="color:#e6edf3;font-size:15px;font-weight:700;line-height:1.2">Adam Wheatley</div>
+        <div style="color:#8b949e;font-size:9px;margin-top:2px">Full Stack Developer · Ruby &amp; Next.js</div>
+      </div>
+      <!-- Experience section -->
+      <div style="padding:10px 12px;border-bottom:1px solid #21262d">
+        <div style="color:#00ff41;font-size:8px;font-family:monospace;margin-bottom:6px">## experience</div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <div style="background:#161b22;border-left:2px solid #00ff41;padding:4px 6px">
+            <div style="color:#e6edf3;font-size:8px;font-weight:600">Junior Ruby Developer</div>
+            <div style="color:#8b949e;font-size:7px">STEM Learning · 2024–Present</div>
+          </div>
+          <div style="background:#161b22;border-left:2px solid #21262d;padding:4px 6px">
+            <div style="color:#e6edf3;font-size:8px">IT Application Support</div>
+            <div style="color:#8b949e;font-size:7px">STEM Learning · 2023–2024</div>
+          </div>
+        </div>
+      </div>
+      <!-- Projects section -->
+      <div style="padding:10px 12px">
+        <div style="color:#00ff41;font-size:8px;font-family:monospace;margin-bottom:6px">## projects</div>
+        <div style="display:flex;gap:4px">
+          <div style="background:#161b22;border:1px solid #21262d;border-radius:3px;padding:5px;flex:1">
+            <div style="color:#e6edf3;font-size:7px;font-weight:600">TeachComputing</div>
+            <div style="color:#8b949e;font-size:6px">Rails · JS</div>
+          </div>
+          <div style="background:#161b22;border:1px solid #21262d;border-radius:3px;padding:5px;flex:1">
+            <div style="color:#e6edf3;font-size:7px;font-weight:600">Instagram Clone</div>
+            <div style="color:#8b949e;font-size:6px">Rails · Auth</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Hero + Sections (Single Page)</h3>
+      <p>One long page with a terminal-style hero, then experience timeline, projects, and contact — all reachable by scrolling or nav links. The standard professional portfolio structure.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="career-journey" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d1117;padding:0;overflow:hidden;font-family:monospace;">
+      <!-- Progress bar on left -->
+      <div style="display:flex;height:130px">
+        <div style="width:24px;background:#161b22;border-right:1px solid #21262d;display:flex;flex-direction:column;align-items:center;padding-top:10px;gap:8px">
+          <div style="width:8px;height:8px;border-radius:50%;background:#00ff41;box-shadow:0 0 6px #00ff41"></div>
+          <div style="width:1px;flex:1;background:#21262d"></div>
+          <div style="width:6px;height:6px;border-radius:50%;border:1px solid #30363d"></div>
+          <div style="width:1px;flex:1;background:#21262d"></div>
+          <div style="width:6px;height:6px;border-radius:50%;border:1px solid #30363d"></div>
+          <div style="width:1px;flex:1;background:#21262d"></div>
+          <div style="width:6px;height:6px;border-radius:50%;border:1px solid #30363d"></div>
+          <div style="width:1px;flex:1;background:#21262d"></div>
+        </div>
+        <!-- Card content -->
+        <div style="flex:1;padding:12px">
+          <div style="color:#00ff41;font-size:8px;margin-bottom:4px">[V5] Current</div>
+          <div style="color:#e6edf3;font-size:11px;font-weight:700;margin-bottom:2px">Junior Ruby Developer</div>
+          <div style="color:#8b949e;font-size:8px;margin-bottom:8px">STEM Learning · Mar 2024–Present</div>
+          <div style="color:#8b949e;font-size:8px;line-height:1.6">Building and maintaining Ruby on Rails applications for the national computing curriculum platform...</div>
+          <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+            <span style="border:1px solid #00ff4133;color:#00ff41;font-size:6px;padding:2px 5px;border-radius:2px">Ruby</span>
+            <span style="border:1px solid #00ff4133;color:#00ff41;font-size:6px;padding:2px 5px;border-radius:2px">Rails</span>
+            <span style="border:1px solid #00ff4133;color:#00ff41;font-size:6px;padding:2px 5px;border-radius:2px">RSpec</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Career Journey (Enhanced)</h3>
+      <p>Keep the current bouldering-grade scroll with terminal green aesthetic. Your existing unique storytelling format — V0 through V6 — just with a much sharper visual treatment.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="split-terminal" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d1117;padding:0;overflow:hidden;font-family:monospace;">
+      <div style="display:flex;height:130px;">
+        <!-- Left sidebar -->
+        <div style="width:70px;background:#010409;border-right:1px solid #21262d;padding:10px 8px;display:flex;flex-direction:column;gap:6px;">
+          <div style="color:#00ff41;font-size:8px;margin-bottom:4px">adam.rb</div>
+          <div style="color:#8b949e;font-size:7px">─────</div>
+          <div style="color:#00ff41;font-size:7px">▶ home</div>
+          <div style="color:#8b949e;font-size:7px">&nbsp;&nbsp;work</div>
+          <div style="color:#8b949e;font-size:7px">&nbsp;&nbsp;projects</div>
+          <div style="color:#8b949e;font-size:7px">&nbsp;&nbsp;about</div>
+          <div style="color:#8b949e;font-size:7px">&nbsp;&nbsp;contact</div>
+          <div style="color:#8b949e;font-size:7px">─────</div>
+          <div style="color:#30363d;font-size:6px">Ruby · Rails<br>Next.js · TS</div>
+        </div>
+        <!-- Main content -->
+        <div style="flex:1;padding:10px 10px;overflow:hidden">
+          <div style="color:#00ff41;font-size:8px;margin-bottom:6px">$ ./whoami</div>
+          <div style="color:#e6edf3;font-size:12px;font-weight:700">Adam Wheatley</div>
+          <div style="color:#8b949e;font-size:8px;margin-bottom:8px">Full Stack Developer</div>
+          <div style="background:#161b22;border:1px solid #21262d;border-radius:3px;padding:6px;font-size:7px;color:#8b949e;line-height:1.8">
+            <span style="color:#00ff41">→</span> Currently at STEM Learning<br>
+            <span style="color:#00ff41">→</span> Ruby on Rails + Next.js<br>
+            <span style="color:#00ff41">→</span> Climber. Problem solver.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Split / IDE Layout</h3>
+      <p>Persistent left sidebar (like VS Code or a terminal file tree), main content area on the right. Very "developer tool" aesthetic — unique and immersive but more unconventional.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;text-align:center">Click to select, then reply in the terminal</p>

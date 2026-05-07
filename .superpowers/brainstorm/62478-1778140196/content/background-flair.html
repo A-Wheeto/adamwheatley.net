@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Flair Options</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d1117; color: #e6edf3; font-family: system-ui, sans-serif; padding: 24px; }
+
+  :root {
+    --green: #00ff41;
+    --green-dim: rgba(0,255,65,0.12);
+    --green-border: rgba(0,255,65,0.25);
+    --surface: #161b22;
+    --border: #21262d;
+    --muted: #8b949e;
+    --mono: 'Courier New', Courier, monospace;
+  }
+
+  h2 { font-size: 16px; margin-bottom: 6px; }
+  .subtitle { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+
+  .cards { display: flex; gap: 20px; flex-wrap: wrap; }
+
+  .card {
+    flex: 1; min-width: 260px;
+    border: 2px solid var(--border); border-radius: 8px;
+    overflow: hidden; cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: var(--green-border); }
+  .card.selected { border-color: var(--green); }
+
+  .preview {
+    position: relative;
+    background: #0d1117;
+    height: 280px;
+    overflow: hidden;
+  }
+
+  /* shared card chrome */
+  .mock-nav {
+    position: relative; z-index: 2;
+    background: rgba(13,17,23,0.95);
+    border-bottom: 1px solid var(--border);
+    padding: 7px 12px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .brand { font-family: var(--mono); font-size: 9px; color: var(--green); }
+  .mock-career-card {
+    position: relative; z-index: 2;
+    margin: 16px;
+    border-left: 3px solid var(--green);
+    background: rgba(22,27,34,0.85);
+    border-radius: 0 6px 6px 0;
+    padding: 14px;
+    backdrop-filter: blur(2px);
+  }
+  .mock-career-card .grade { font-family: var(--mono); font-size: 9px; color: var(--green); margin-bottom: 4px; }
+  .mock-career-card .role { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+  .mock-career-card .org { font-size: 10px; color: var(--green); margin-bottom: 6px; }
+  .mock-career-card .desc { font-size: 9px; color: var(--muted); line-height: 1.6; }
+
+  .card-label {
+    background: var(--surface); padding: 12px 14px;
+    border-top: 1px solid var(--border);
+  }
+  .card-label h3 { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+  .card-label p { font-size: 10px; color: var(--muted); line-height: 1.5; }
+
+  /* ── OPTION A: Corner code watermark ── */
+  .code-corner {
+    position: absolute;
+    bottom: 0; right: 0;
+    padding: 16px;
+    font-family: var(--mono); font-size: 9px;
+    line-height: 1.9;
+    color: rgba(0,255,65,0.12);
+    text-align: right;
+    pointer-events: none;
+    user-select: none;
+  }
+  .code-corner .c-keyword { color: rgba(80,250,123,0.15); }
+  .code-corner .c-string  { color: rgba(241,250,140,0.12); }
+  .code-corner .c-comment { color: rgba(98,114,164,0.18); }
+
+  /* ── OPTION B: Dot grid ── */
+  .dot-grid {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(0,255,65,0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+  }
+  /* fade out towards top-left where card sits */
+  .dot-grid::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 40%, #0d1117 30%, transparent 70%);
+  }
+
+  /* ── OPTION C: Ambient glow blobs ── */
+  .glow-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+  }
+  .blob-1 {
+    width: 180px; height: 180px;
+    background: rgba(0,255,65,0.06);
+    bottom: -40px; right: -40px;
+  }
+  .blob-2 {
+    width: 100px; height: 100px;
+    background: rgba(0,255,65,0.04);
+    top: 20px; right: 40px;
+  }
+  /* subtle scanlines */
+  .scanlines {
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    );
+    pointer-events: none;
+  }
+
+  .choice-bar {
+    margin-top: 24px; text-align: center;
+    font-family: var(--mono); font-size: 10px; color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<h2>Background flair — which style?</h2>
+<p class="subtitle">All options are subtle — the card content always reads clearly on top</p>
+
+<div class="cards">
+
+  <!-- A: Corner code -->
+  <div class="card" data-choice="corner-code" onclick="pick(this)">
+    <div class="preview">
+      <div class="mock-nav"><span class="brand">&gt; adam_wheatley.rb</span></div>
+
+      <div class="code-corner">
+        <span class="c-comment"># career journey</span><br>
+        <span class="c-keyword">class</span> Developer<br>
+        &nbsp;&nbsp;<span class="c-keyword">attr_reader</span> <span class="c-string">:curiosity</span><br>
+        <br>
+        &nbsp;&nbsp;<span class="c-keyword">def</span> initialize<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;@grade = <span class="c-string">"V0"</span><br>
+        &nbsp;&nbsp;<span class="c-keyword">end</span><br>
+        <br>
+        &nbsp;&nbsp;<span class="c-keyword">def</span> climb<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;@grade.<span class="c-keyword">next!</span><br>
+        &nbsp;&nbsp;<span class="c-keyword">end</span><br>
+        <span class="c-keyword">end</span>
+      </div>
+
+      <div class="mock-career-card">
+        <div class="grade">[V0] intro</div>
+        <div class="role">Adam Wheatley</div>
+        <div class="org">Full Stack Developer · Leeds, UK</div>
+        <div class="desc">Developer by profession, climber by habit. I work my way up problems the same way I work up bouldering routes.</div>
+      </div>
+    </div>
+    <div class="card-label">
+      <h3>A — Corner Code</h3>
+      <p>Faded Ruby snippet in the bottom-right corner. Thematic (it's your stack), personal, and tells a story even as decoration.</p>
+    </div>
+  </div>
+
+  <!-- B: Dot grid -->
+  <div class="card" data-choice="dot-grid" onclick="pick(this)">
+    <div class="preview">
+      <div class="dot-grid"></div>
+      <div class="mock-nav"><span class="brand">&gt; adam_wheatley.rb</span></div>
+
+      <div class="mock-career-card">
+        <div class="grade">[V0] intro</div>
+        <div class="role">Adam Wheatley</div>
+        <div class="org">Full Stack Developer · Leeds, UK</div>
+        <div class="desc">Developer by profession, climber by habit. I work my way up problems the same way I work up bouldering routes.</div>
+      </div>
+    </div>
+    <div class="card-label">
+      <h3>B — Dot Grid</h3>
+      <p>Subtle repeating dot pattern across the background, fading away near the card. Common in tech portfolios and design tools — clean and geometric.</p>
+    </div>
+  </div>
+
+  <!-- C: Ambient glow -->
+  <div class="card" data-choice="ambient-glow" onclick="pick(this)">
+    <div class="preview">
+      <div class="glow-blob blob-1"></div>
+      <div class="glow-blob blob-2"></div>
+      <div class="scanlines"></div>
+      <div class="mock-nav"><span class="brand">&gt; adam_wheatley.rb</span></div>
+
+      <div class="mock-career-card">
+        <div class="grade">[V0] intro</div>
+        <div class="role">Adam Wheatley</div>
+        <div class="org">Full Stack Developer · Leeds, UK</div>
+        <div class="desc">Developer by profession, climber by habit. I work my way up problems the same way I work up bouldering routes.</div>
+      </div>
+    </div>
+    <div class="card-label">
+      <h3>C — Ambient Glow</h3>
+      <p>Soft green light blooms in the corners with very faint scanlines. Feels like a CRT monitor — atmospheric and immersive without any hard shapes.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="choice-bar">click a card to select · these can also be combined (e.g. A + C)</div>
+
+<script>
+function pick(el) {
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  if (window.claudeSelect) window.claudeSelect(el.dataset.choice);
+}
+</script>
+</body>
+</html>

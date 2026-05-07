@@ -1,0 +1,79 @@
+<h2>How should each career card look?</h2>
+<p class="subtitle">This is what you'll see scrolling through V0–V6</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="bordered-panel" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d1117;padding:14px;font-family:system-ui,sans-serif;">
+      <div style="border:1px solid #00ff4144;border-radius:6px;padding:14px;background:#0d1117;position:relative;">
+        <div style="position:absolute;top:-1px;left:16px;background:#0d1117;padding:0 6px;">
+          <span style="color:#00ff41;font-size:9px;font-family:'Courier New',monospace">[V5]</span>
+        </div>
+        <div style="margin-top:4px">
+          <div style="color:#e6edf3;font-size:13px;font-weight:700;margin-bottom:2px">Junior Ruby Developer</div>
+          <div style="color:#00ff41;font-size:9px;font-family:'Courier New',monospace;margin-bottom:6px">STEM Learning · Mar 2024–Present</div>
+          <div style="color:#8b949e;font-size:9px;line-height:1.7">Building and maintaining Ruby on Rails applications for the national computing curriculum.</div>
+          <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+            <span style="border:1px solid #00ff4133;color:#00ff41;font-size:7px;padding:2px 5px;font-family:'Courier New',monospace">Ruby</span>
+            <span style="border:1px solid #00ff4133;color:#00ff41;font-size:7px;padding:2px 5px;font-family:'Courier New',monospace">Rails</span>
+            <span style="border:1px solid #00ff4133;color:#00ff41;font-size:7px;padding:2px 5px;font-family:'Courier New',monospace">RSpec</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Bordered Panel</h3>
+      <p>Green-tinted border with a floating grade badge cut into the top edge. Clean, structured, like a terminal window frame.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="left-accent" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d1117;padding:14px;font-family:system-ui,sans-serif;">
+      <div style="border-left:3px solid #00ff41;background:#161b22;border-radius:0 6px 6px 0;padding:12px 14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+          <span style="background:#00ff4120;color:#00ff41;font-size:8px;font-family:'Courier New',monospace;padding:2px 6px;border-radius:2px">V5</span>
+          <span style="color:#8b949e;font-size:8px;font-family:'Courier New',monospace">Mar 2024–Present</span>
+        </div>
+        <div style="color:#e6edf3;font-size:13px;font-weight:700;margin-bottom:2px">Junior Ruby Developer</div>
+        <div style="color:#00ff41;font-size:9px;margin-bottom:6px">STEM Learning</div>
+        <div style="color:#8b949e;font-size:9px;line-height:1.7">Building and maintaining Ruby on Rails applications for the national computing curriculum.</div>
+        <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap">
+          <span style="background:#00ff4110;color:#00ff41;font-size:7px;padding:2px 6px;font-family:'Courier New',monospace;border-radius:2px">Ruby</span>
+          <span style="background:#00ff4110;color:#00ff41;font-size:7px;padding:2px 6px;font-family:'Courier New',monospace;border-radius:2px">Rails</span>
+          <span style="background:#00ff4110;color:#00ff41;font-size:7px;padding:2px 6px;font-family:'Courier New',monospace;border-radius:2px">RSpec</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Left Accent Bar (Recommended)</h3>
+      <p>Solid green left border on a slightly elevated dark panel. Readable, directional, and clean — common in developer tooling UIs (VS Code, GitHub). Strong visual hierarchy without clutter.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="terminal-block" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0d1117;padding:14px;font-family:'Courier New',monospace;">
+      <!-- terminal title bar -->
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:6px 6px 0 0;padding:5px 10px;display:flex;align-items:center;gap:5px">
+        <span style="width:7px;height:7px;border-radius:50%;background:#ff5f56;display:inline-block"></span>
+        <span style="width:7px;height:7px;border-radius:50%;background:#ffbd2e;display:inline-block"></span>
+        <span style="width:7px;height:7px;border-radius:50%;background:#27c93f;display:inline-block"></span>
+        <span style="color:#8b949e;font-size:8px;margin-left:6px">v5_stem_learning.rb</span>
+      </div>
+      <div style="background:#010409;border:1px solid #30363d;border-top:none;border-radius:0 0 6px 6px;padding:10px;">
+        <div style="font-size:8px;line-height:2;color:#8b949e">
+          <span style="color:#00ff41">&gt;</span> <span style="color:#8be9fd">role</span>: <span style="color:#f1fa8c">"Junior Ruby Developer"</span><br>
+          <span style="color:#00ff41">&gt;</span> <span style="color:#8be9fd">org</span>: <span style="color:#f1fa8c">"STEM Learning"</span><br>
+          <span style="color:#00ff41">&gt;</span> <span style="color:#8be9fd">since</span>: <span style="color:#f1fa8c">"Mar 2024"</span><br>
+          <span style="color:#00ff41">&gt;</span> <span style="color:#8be9fd">stack</span>: [<span style="color:#f1fa8c">"Ruby"</span>, <span style="color:#f1fa8c">"Rails"</span>, <span style="color:#f1fa8c">"RSpec"</span>]
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Terminal Block</h3>
+      <p>Each card looks like a terminal window with a macOS-style title bar and code-formatted content. Maximum theatre — very distinctive, but content readability takes a hit.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;text-align:center">Click to select, then reply in the terminal</p>

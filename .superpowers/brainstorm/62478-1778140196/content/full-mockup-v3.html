@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Mockup v3 — Tweaks</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d1117; color: #e6edf3; font-family: system-ui, -apple-system, sans-serif; }
+
+  :root {
+    --green: #00ff41;
+    --green-dim: rgba(0,255,65,0.12);
+    --green-border: rgba(0,255,65,0.25);
+    --surface: #161b22;
+    --border: #21262d;
+    --muted: #8b949e;
+    --mono: 'Courier New', Courier, monospace;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(13,17,23,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px; height: 52px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand { font-family: var(--mono); font-size: 13px; color: var(--green); letter-spacing: 0.05em; }
+  .nav-links { display: flex; align-items: center; gap: 10px; }
+  .nav-icon {
+    display: flex; align-items: center; gap: 5px;
+    border: 1px solid var(--border); border-radius: 4px;
+    padding: 5px 12px; font-size: 11px; color: var(--muted);
+    text-decoration: none; transition: border-color 0.15s, color 0.15s;
+  }
+  .nav-icon:hover { border-color: var(--green); color: var(--green); }
+
+  .page-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    background: var(--surface);
+  }
+  .tab {
+    font-family: var(--mono); font-size: 11px; color: var(--muted);
+    padding: 10px 18px; border-bottom: 2px solid transparent;
+    cursor: pointer; transition: color 0.15s;
+  }
+  .tab.active { color: var(--green); border-bottom-color: var(--green); }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ── HOME ── */
+  .home-layout { display: grid; grid-template-columns: 64px 1fr; min-height: calc(100vh - 105px); }
+
+  /* TWEAK 1: Wider sidebar with grade labels next to dots */
+  .progress-sidebar {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column; align-items: center;
+    padding: 32px 0;
+    position: sticky; top: 105px; height: calc(100vh - 105px);
+  }
+  .progress-track {
+    display: flex; flex-direction: column; align-items: center;
+    flex: 1; justify-content: space-around; width: 100%;
+  }
+  .prog-item {
+    display: flex; align-items: center; justify-content: center;
+    gap: 6px; width: 100%; padding: 0 10px;
+  }
+  .prog-dot {
+    width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0;
+    border: 1px solid var(--border); background: transparent;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .prog-dot.active { background: var(--green); border-color: var(--green); box-shadow: 0 0 8px var(--green); }
+  .prog-dot.visited { background: var(--green-dim); border-color: var(--green-border); }
+  /* TWEAK 1: grade label beside dot */
+  .prog-label {
+    font-family: var(--mono); font-size: 9px; color: var(--muted);
+    transition: color 0.2s;
+  }
+  .prog-item:hover .prog-label { color: #e6edf3; }
+  .prog-item.is-active .prog-label { color: var(--green); }
+  .prog-line { width: 1px; height: 24px; background: var(--border); }
+
+  .cards-area { padding: 40px 48px; max-width: 760px; display: flex; flex-direction: column; gap: 24px; }
+
+  /* TWEAK 2: inactive cards at full opacity — border colour does the work */
+  .career-card {
+    border-left: 3px solid var(--border);
+    background: var(--surface);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .career-card:hover { border-left-color: var(--green-border); }
+  /* TWEAK 3: active card gets a subtle glow, not just a border */
+  .career-card.current {
+    border-left-color: var(--green);
+    box-shadow: 0 0 24px rgba(0,255,65,0.06), inset 0 0 40px rgba(0,255,65,0.02);
+  }
+
+  .card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .grade-badge {
+    background: var(--green-dim); color: var(--green);
+    font-family: var(--mono); font-size: 10px;
+    padding: 2px 7px; border-radius: 2px; border: 1px solid var(--green-border);
+  }
+  .card-date { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+  .card-title { font-size: 17px; font-weight: 700; color: #e6edf3; margin-bottom: 3px; }
+  .card-org { font-size: 12px; color: var(--green); margin-bottom: 10px; }
+  .card-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-family: var(--mono); font-size: 10px; color: var(--green);
+    padding: 2px 8px; background: var(--green-dim);
+    border-radius: 2px; border: 1px solid var(--green-border);
+  }
+
+  /* ── PROJECTS ── */
+  .projects-area { padding: 40px 48px; max-width: 1000px; }
+  .projects-header { margin-bottom: 32px; }
+  .projects-header h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .projects-header p { font-size: 13px; color: var(--muted); font-family: var(--mono); }
+
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+
+  /* TWEAK 4: project cards get green left border on hover — ties back to career cards */
+  .project-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    border-radius: 0 8px 8px 0; padding: 20px;
+    transition: border-color 0.2s, transform 0.15s;
+    cursor: pointer;
+  }
+  .project-card:hover { border-left-color: var(--green); transform: translateY(-2px); }
+  .project-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .project-card p { font-size: 11px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+
+  .climbing-section { margin-top: 8px; }
+  .climbing-section h2 {
+    font-family: var(--mono); font-size: 13px; color: var(--green);
+    margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+  }
+  .climbing-section h2::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* TWEAK 5: 2-column climbing grid — breathes better */
+  .climbing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .climbing-item { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 12px; }
+  .climbing-item .c-name { font-size: 12px; font-weight: 600; margin-bottom: 3px; }
+  .climbing-item .c-desc { font-size: 10px; color: var(--muted); line-height: 1.5; }
+
+  footer {
+    border-top: 1px solid var(--border); padding: 16px 32px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  footer .f-brand { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  footer .f-links { display: flex; gap: 16px; }
+  footer .f-links a { font-size: 11px; color: var(--muted); text-decoration: none; }
+  footer .f-links a:hover { color: var(--green); }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0d1117; }
+  ::-webkit-scrollbar-thumb { background: #21262d; border-radius: 3px; }
+
+  /* Tweak callouts */
+  .tweak-note {
+    position: fixed; bottom: 16px; right: 16px;
+    background: var(--surface); border: 1px solid var(--green-border);
+    border-radius: 6px; padding: 12px 16px; max-width: 260px;
+    font-size: 11px; line-height: 1.6; color: var(--muted);
+    z-index: 100;
+  }
+  .tweak-note strong { color: var(--green); font-family: var(--mono); display: block; margin-bottom: 6px; }
+  .tweak-note ul { padding-left: 14px; }
+  .tweak-note li { margin-bottom: 3px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">&gt; adam_wheatley.rb</span>
+  <div class="nav-links">
+    <a href="#" class="nav-icon">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      GitHub
+    </a>
+    <a href="#" class="nav-icon">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+  </div>
+</nav>
+
+<div class="page-tabs">
+  <div class="tab active" onclick="showPage('home')" id="tab-home">home.rb</div>
+  <div class="tab" onclick="showPage('projects')" id="tab-projects">projects.rb</div>
+</div>
+
+<div class="page active" id="page-home">
+  <div class="home-layout">
+    <div class="progress-sidebar">
+      <div class="progress-track">
+        <div class="prog-item is-active"><div class="prog-dot active"></div><span class="prog-label">V0</span></div>
+        <div class="prog-line"></div>
+        <div class="prog-item"><div class="prog-dot visited"></div><span class="prog-label">V1</span></div>
+        <div class="prog-line"></div>
+        <div class="prog-item"><div class="prog-dot"></div><span class="prog-label">V2</span></div>
+        <div class="prog-line"></div>
+        <div class="prog-item"><div class="prog-dot"></div><span class="prog-label">V3</span></div>
+        <div class="prog-line"></div>
+        <div class="prog-item"><div class="prog-dot"></div><span class="prog-label">V4</span></div>
+        <div class="prog-line"></div>
+        <div class="prog-item"><div class="prog-dot"></div><span class="prog-label">V5</span></div>
+        <div class="prog-line"></div>
+        <div class="prog-item"><div class="prog-dot"></div><span class="prog-label">V6</span></div>
+      </div>
+    </div>
+
+    <div class="cards-area">
+      <div class="career-card current">
+        <div class="card-meta">
+          <span class="grade-badge">V0</span>
+          <span class="card-date">intro</span>
+        </div>
+        <div class="card-title">Adam Wheatley</div>
+        <div class="card-org">Full Stack Developer · Leeds, UK</div>
+        <div class="card-desc">Developer by profession, climber by habit. I work my way up problems the same way I work up bouldering routes — methodically, persistently, and with a lot of trial and error. Currently building Ruby on Rails applications at STEM Learning.</div>
+        <div class="card-tags">
+          <span class="tag">Bouldering</span>
+          <span class="tag">Guitar</span>
+          <span class="tag">Problem-Solving</span>
+        </div>
+      </div>
+
+      <div class="career-card">
+        <div class="card-meta">
+          <span class="grade-badge">V1</span>
+          <span class="card-date">Nov 2018 – Nov 2019</span>
+        </div>
+        <div class="card-title">IT Analyst</div>
+        <div class="card-org">Aviva</div>
+        <div class="card-desc">First line support for a major insurance provider. Learned how to diagnose fast, communicate clearly under pressure, and that most problems are really people problems.</div>
+      </div>
+
+      <div class="career-card">
+        <div class="card-meta">
+          <span class="grade-badge">V2</span>
+          <span class="card-date">Nov 2019 – Aug 2022</span>
+        </div>
+        <div class="card-title">2nd Line IT Support</div>
+        <div class="card-org">Askham Bryan College</div>
+        <div class="card-desc">Multi-platform support across Windows, macOS, iOS and Android. First exposure to scripting and automation — realised I wanted to build things, not just fix them.</div>
+      </div>
+
+      <div class="career-card">
+        <div class="card-meta">
+          <span class="grade-badge">V5</span>
+          <span class="card-date">Mar 2024 – Present</span>
+        </div>
+        <div class="card-title">Junior Ruby Developer</div>
+        <div class="card-org">STEM Learning</div>
+        <div class="card-desc">Building and maintaining Ruby on Rails applications that support the national computing curriculum. First role writing production code — shipping features, fixing bugs, writing tests.</div>
+        <div class="card-tags">
+          <span class="tag">Ruby</span><span class="tag">Rails</span><span class="tag">RSpec</span><span class="tag">PostgreSQL</span><span class="tag">JavaScript</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-projects">
+  <div class="projects-area">
+    <div class="projects-header">
+      <h1>Projects</h1>
+      <p>&gt; things I've built</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>TeachComputing.org</h3>
+        <p>Production Rails application serving the national computing curriculum. Stimulus, RSpec, PostgreSQL.</p>
+        <div class="card-tags"><span class="tag">Ruby</span><span class="tag">Rails</span><span class="tag">Stimulus</span></div>
+      </div>
+      <div class="project-card">
+        <h3>Instagram Clone</h3>
+        <p>Full Rails clone with authentication, Active Storage image uploads, follows, and likes.</p>
+        <div class="card-tags"><span class="tag">Rails</span><span class="tag">Auth</span><span class="tag">S3</span></div>
+      </div>
+      <div class="project-card">
+        <h3>Python Dashboard</h3>
+        <p>Desktop data visualisation dashboard built with Tkinter and matplotlib.</p>
+        <div class="card-tags"><span class="tag">Python</span><span class="tag">Tkinter</span></div>
+      </div>
+    </div>
+    <div class="climbing-section">
+      <h2>Currently Climbing</h2>
+      <div class="climbing-grid">
+        <div class="climbing-item"><div class="c-name">TypeScript</div><div class="c-desc">Stronger typing in Next.js projects</div></div>
+        <div class="climbing-item"><div class="c-name">Hotwire</div><div class="c-desc">Turbo &amp; Stimulus in Rails</div></div>
+        <div class="climbing-item"><div class="c-name">Docker</div><div class="c-desc">Containerised dev environments</div></div>
+        <div class="climbing-item"><div class="c-name">GraphQL</div><div class="c-desc">API design beyond REST</div></div>
+        <div class="climbing-item"><div class="c-name">AWS</div><div class="c-desc">Cloud infrastructure basics</div></div>
+        <div class="climbing-item"><div class="c-name">Elasticsearch</div><div class="c-desc">Full-text search at scale</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="f-brand">adam_wheatley · 2025</span>
+  <div class="f-links">
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+
+<!-- Callout panel -->
+<div class="tweak-note">
+  <strong># changes from v2</strong>
+  <ul>
+    <li>Grade labels (V0–V6) beside progress dots</li>
+    <li>Inactive cards at full opacity — border does the work</li>
+    <li>Active card has subtle green glow</li>
+    <li>Project cards share left-border style with career cards</li>
+    <li>"Currently Climbing" at 2 columns — more breathing room</li>
+  </ul>
+</div>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+}
+</script>
+</body>
+</html>
