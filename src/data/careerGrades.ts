@@ -40,14 +40,14 @@ export const careerGrades: Grade[] = [
     grade: 'V5',
     role: 'Junior Ruby Developer - STEM Learning',
     description: 'Made the leap to full development! Building features for Teach Computing website using Ruby on Rails, JavaScript, Stimulus, and CSS. Integrated Classmarker & Credly APIs, managing Heroku deployments, achieving 96% test coverage with RSpec. From support to developer - the climb continues!',
-    year: 'Mar 2024 - Present',
+    year: 'Mar 2024 - Oct 2025',
     skills: ['Ruby on Rails', 'JavaScript/Stimulus', 'RSpec', 'Heroku', 'API Integration', 'MS Dynamics', 'Git/GitHub', 'TDD', 'PostgreSQL', 'RESTful APIs']
   },
   {
     grade: 'V6',
     role: 'Full Stack Developer',
-    description: 'The summit achieved! Ruby on Rails backend expertise meets Next.js frontend mastery. Building complete solutions from concept to deployment, creating this very portfolio to showcase the journey. Ready for agency work that combines technical excellence with creative problem-solving.',
-    year: 'The Next Challenge',
+    description: 'Summit reached! Ruby on Rails backend expertise combined with Next.js frontend mastery. Building complete solutions from concept to deployment — including this portfolio. Delivering agency work that combines technical excellence with creative problem-solving.',
+    year: 'Oct 2025 - Present',
     skills: ['Next.js', 'TypeScript', 'Full Stack', 'Cloud Deploy', 'CI/CD', 'Vercel', 'React', 'Tailwind CSS', 'API Development', 'Modern Tooling']
   }
 ]

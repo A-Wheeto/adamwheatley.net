@@ -6,7 +6,7 @@ interface CareerCardProps {
 }
 
 export default function CareerCard({ grade, isActive }: CareerCardProps) {
-  const isAspirational = grade.grade === 'V6'
+  const isAspirational = grade.year === 'The Next Challenge'
 
   if (isAspirational) {
     return (
