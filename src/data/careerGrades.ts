@@ -49,5 +49,12 @@ export const careerGrades: Grade[] = [
     description: 'Summit reached! Ruby on Rails backend expertise combined with Next.js frontend mastery. Building complete solutions from concept to deployment — including this portfolio. Delivering agency work that combines technical excellence with creative problem-solving.',
     year: 'Oct 2025 - Present',
     skills: ['Next.js', 'TypeScript', 'Full Stack', 'Cloud Deploy', 'CI/CD', 'Vercel', 'React', 'Tailwind CSS', 'API Development', 'Modern Tooling']
+  },
+  {
+    grade: 'V7',
+    role: 'Senior Developer',
+    description: 'The next problem on the wall. Leading technical decisions, mentoring others, and owning systems end-to-end. Deeper architecture knowledge, stronger instincts, and the experience to know when not to over-engineer.',
+    year: 'The Next Challenge',
+    skills: ['System Design', 'Mentoring', 'Architecture', 'Tech Leadership', 'Performance', 'Security', 'Code Review', 'Team Collaboration']
   }
 ]
