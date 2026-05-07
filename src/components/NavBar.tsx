@@ -9,7 +9,7 @@ const TABS = [
 ]
 
 const GITHUB_URL = 'https://github.com/A-Wheeto'
-const LINKEDIN_URL = 'YOUR_LINKEDIN_URL'
+const LINKEDIN_URL = 'https://uk.linkedin.com/in/adam-wheatley-643810195'
 
 function GitHubIcon() {
   return (

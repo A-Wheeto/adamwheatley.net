@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               GitHub
             </a>
             <a
-              href="YOUR_LINKEDIN_URL"
+              href="https://uk.linkedin.com/in/adam-wheatley-643810195"
               className="footer-link"
               target="_blank"
               rel="noopener noreferrer"
