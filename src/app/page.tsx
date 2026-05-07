@@ -11,15 +11,10 @@ export default function HomePage() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Active card = first card not yet fully scrolled behind the sticky header (nav + tabs = 105px)
-      const headerBottom = 105
-      for (let i = 0; i < sectionRefs.current.length; i++) {
-        const ref = sectionRefs.current[i]
-        if (ref && ref.getBoundingClientRect().bottom > headerBottom) {
-          setCurrentGrade(i)
-          break
-        }
-      }
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      if (docHeight <= 0) return
+      const progress = Math.min(window.scrollY / docHeight, 1)
+      setCurrentGrade(Math.round(progress * (careerGrades.length - 1)))
     }
 
     window.addEventListener('scroll', handleScroll)
