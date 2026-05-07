@@ -11,14 +11,15 @@ export default function HomePage() {
 
   useEffect(() => {
     const handleScroll = () => {
-      sectionRefs.current.forEach((ref, index) => {
-        if (ref) {
-          const rect = ref.getBoundingClientRect()
-          if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
-            setCurrentGrade(index)
-          }
+      // Active card = first card not yet fully scrolled behind the sticky header (nav + tabs = 105px)
+      const headerBottom = 105
+      for (let i = 0; i < sectionRefs.current.length; i++) {
+        const ref = sectionRefs.current[i]
+        if (ref && ref.getBoundingClientRect().bottom > headerBottom) {
+          setCurrentGrade(i)
+          break
         }
-      })
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
