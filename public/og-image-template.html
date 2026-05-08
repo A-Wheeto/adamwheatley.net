@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1200px;
+      height: 630px;
+      background: #0d1117;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 80px;
+      overflow: hidden;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+    }
+    .prompt {
+      font-size: 14px;
+      color: rgba(0, 255, 65, 0.4);
+      margin-bottom: 28px;
+    }
+    .name {
+      font-size: 52px;
+      font-weight: bold;
+      color: #e6edf3;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      margin-bottom: 8px;
+    }
+    .role {
+      font-size: 24px;
+      color: #00ff41;
+      margin-bottom: 32px;
+    }
+    .url {
+      font-size: 16px;
+      color: rgba(139, 148, 158, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <p class="prompt">$ whoami</p>
+    <p class="name">Adam Wheatley</p>
+    <p class="role">Full-Stack Developer</p>
+    <p class="url">adamwheatley.net</p>
+  </div>
+</body>
+</html>
