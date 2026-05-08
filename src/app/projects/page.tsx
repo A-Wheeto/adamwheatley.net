@@ -35,7 +35,7 @@ export default function ProjectsPage() {
       </div>
 
       <h2 className="climbing-heading">
-        # currently_climbing
+        # current_stack
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {currentlyClimbing.map((skill) => (
