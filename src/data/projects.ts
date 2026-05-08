@@ -33,12 +33,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    title: 'STEM Web User Profile',
-    description: 'Single sign-on platform unifying authentication across the STEM Learning suite of websites. Built with Auth0 to provide seamless login across TeachComputing.org, stem.org.uk, and STEM Ambassadors from a single account.',
-    technologies: ['Auth0', 'Next.js', 'TypeScript', 'Vercel'],
-    featured: true,
-  },
-  {
     title: 'STEM Ambassadors',
     description: 'Platform connecting STEM professionals as volunteers with schools and colleges across the UK. Built with Next.js and Contentful, enabling ambassadors to register and schools to find and book STEM role models.',
     technologies: ['Next.js', 'TypeScript', 'Contentful', 'Vercel'],
