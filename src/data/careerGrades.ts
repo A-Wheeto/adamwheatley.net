@@ -11,7 +11,7 @@ export const careerGrades: Grade[] = [
   {
     grade: 'V1',
     role: 'IT Analyst - Aviva',
-    description: 'Started my tech career providing 1st line IT support to employees across UK, Ireland, and globally. Handled high-volume support calls, diagnosed issues with desktop machines, laptops, Citrix, RDP, and Virtual Machines. Building my foundation in troubleshooting and customer service.',
+    description: 'First role in tech: 1st line IT support across UK, Ireland, and globally for a major insurance firm. High-volume call handling — diagnosing desktop, laptop, Citrix, RDP, and Virtual Machine issues under pressure. Built the troubleshooting instincts that still shape how I approach every problem.',
     year: 'Nov 2018 - Nov 2019',
     skills: ['High Volume Support', 'Windows 7/10', 'Citrix & RDP', 'Active Directory', 'Mobile Support', 'Ticket Management', 'Virtual Machines', 'Hardware Diagnostics', 'Customer Service']
   },
@@ -25,7 +25,7 @@ export const careerGrades: Grade[] = [
   {
     grade: 'V3',
     role: 'Support Engineer - Cloud Design Box',
-    description: 'Transitioned to cloud technologies, specializing in automated SharePoint solutions for schools and businesses. Integrated with school MIS systems using Microsoft Data Sync, led client onboarding, and provided tailored consultations. The technical crux where cloud met infrastructure.',
+    description: 'Specialised in automated SharePoint solutions for schools and businesses, integrating with MIS systems via Microsoft Data Sync. Led client onboarding end-to-end — cutting manual setup from days to hours through automation. The crux where cloud infrastructure met real-world delivery.',
     year: 'Aug 2022 - Sep 2023',
     skills: ['SharePoint Design', 'MS Data Sync', 'MIS Integration', 'Client Onboarding', 'Permissions Mgmt', 'Consultations', 'PowerShell', 'Office 365 Admin', 'Cloud Architecture', 'Client Relations']
   },
