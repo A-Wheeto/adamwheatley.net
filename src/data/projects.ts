@@ -17,10 +17,10 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    title: 'Instagram Rails Application',
-    description: 'A full-featured Instagram clone built from scratch using Ruby on Rails. Includes user authentication, image uploads with Active Storage, post creation and sharing, and a responsive feed interface.',
-    url: 'https://github.com/A-Wheeto/Instagram-Rails-Application',
-    technologies: ['Ruby on Rails', 'PostgreSQL', 'Active Storage', 'Authentication', 'CSS'],
+    title: 'Pinpoint → HiBob Integration',
+    description: 'Serverless webhook built with Ruby on AWS Lambda and API Gateway. When a candidate is hired in Pinpoint, the function automatically creates their employee record in HiBob, uploads their CV, and logs the result to CloudWatch — with multi-layered error handling throughout.',
+    url: 'https://github.com/A-Wheeto/Pinpoint-Webhook',
+    technologies: ['Ruby', 'AWS Lambda', 'API Gateway', 'Serverless', 'REST APIs', 'CloudWatch'],
     featured: true,
   },
   {
