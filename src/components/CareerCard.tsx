@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
 import { Grade } from '@/types/career'
 
 interface CareerCardProps {
@@ -7,10 +10,38 @@ interface CareerCardProps {
 
 export default function CareerCard({ grade, isActive }: CareerCardProps) {
   const isAspirational = grade.year === 'The Next Challenge'
+  const cardRef = useRef<HTMLDivElement>(null)
+  const [hasEntered, setHasEntered] = useState(false)
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReduced) {
+      setHasEntered(true)
+      return
+    }
+
+    const el = cardRef.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasEntered(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.15 }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  const visibilityClass = hasEntered ? 'career-card-visible' : 'career-card-hidden'
 
   if (isAspirational) {
     return (
-      <div className="career-card-aspirational">
+      <div ref={cardRef} className={`career-card-aspirational ${visibilityClass}`}>
         <div className="flex items-center gap-3 mb-3">
           <span className="grade-badge-dim">{grade.grade}</span>
           <span className="card-date" style={{ opacity: 0.6 }}>{grade.year}</span>
@@ -37,7 +68,7 @@ export default function CareerCard({ grade, isActive }: CareerCardProps) {
   }
 
   return (
-    <div className={`career-card${isActive ? ' career-card-active' : ''}`}>
+    <div ref={cardRef} className={`career-card${isActive ? ' career-card-active' : ''} ${visibilityClass}`}>
       <div className="flex items-center gap-3 mb-3">
         <span className="grade-badge">{grade.grade}</span>
         <span className="card-date">{grade.year}</span>
