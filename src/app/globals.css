@@ -433,14 +433,22 @@ body {
   transform: translateY(-2px);
 }
 
-.project-card-image {
-  width: 100%;
+.project-card-image-wrapper {
+  position: relative;
   height: 160px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-card-image {
   object-fit: cover;
   object-position: top;
-  display: block;
-  border-bottom: 1px solid var(--border);
   filter: brightness(0.55) saturate(0.8);
+  transition: filter 0.3s ease;
+}
+
+.project-card:hover .project-card-image {
+  filter: brightness(0.85) saturate(0.95);
 }
 
 .project-card-body {

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Project } from '@/types/project'
 
 interface ProjectCardProps {
@@ -8,11 +9,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="project-card">
       {project.imageUrl && (
-        <img
-          src={project.imageUrl}
-          alt={`${project.title} screenshot`}
-          className="project-card-image"
-        />
+        <div className="project-card-image-wrapper">
+          <Image
+            src={project.imageUrl}
+            alt={`${project.title} screenshot`}
+            fill
+            sizes="(max-width: 640px) 100vw, 50vw"
+            className="project-card-image"
+          />
+        </div>
       )}
       <div className="project-card-body">
         <div className="flex items-center gap-2 mb-2">

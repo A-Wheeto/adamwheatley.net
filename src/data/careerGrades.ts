@@ -39,16 +39,16 @@ export const careerGrades: Grade[] = [
   {
     grade: 'V5',
     role: 'Junior Ruby Developer - STEM Learning',
-    description: 'Made the leap to full development! Building features for Teach Computing website using Ruby on Rails, JavaScript, Stimulus, and CSS. Integrated Classmarker & Credly APIs, managing Heroku deployments, achieving 96% test coverage with RSpec. From support to developer - the climb continues!',
+    description: 'Made the leap to full development, building features for the Teach Computing website using Ruby on Rails, JavaScript, Stimulus, and CSS. Integrated Classmarker and Credly APIs, managed Heroku deployments, and maintained 96% test coverage with RSpec.',
     year: 'Mar 2024 - Oct 2025',
     skills: ['Ruby on Rails', 'JavaScript/Stimulus', 'RSpec', 'Heroku', 'API Integration', 'MS Dynamics', 'Git/GitHub', 'TDD', 'PostgreSQL', 'RESTful APIs']
   },
   {
     grade: 'V6',
     role: 'Full Stack Developer',
-    description: 'Summit reached! Ruby on Rails backend expertise combined with Next.js frontend mastery. Building complete solutions from concept to deployment, including this portfolio. Delivering agency work that combines technical excellence with creative problem-solving.',
+    description: 'Full Stack Developer at STEM Learning, working across a suite of education websites. TeachComputing.org is built in Ruby on Rails with Strapi for content management. The STEM and STEM Ambassadors sites are Next.js frontends backed by Contentful. The STEM Web User Profile handles single sign-on across the whole platform using Auth0.',
     year: 'Oct 2025 - Present',
-    skills: ['Next.js', 'TypeScript', 'Full Stack', 'Cloud Deploy', 'CI/CD', 'Vercel', 'React', 'Tailwind CSS', 'API Development', 'Modern Tooling']
+    skills: ['Ruby on Rails', 'Next.js', 'TypeScript', 'Auth0', 'Contentful', 'Strapi', 'Docker', 'Sentry', 'Vercel', 'Heroku']
   },
   {
     grade: 'V7',
