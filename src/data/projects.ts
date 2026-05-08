@@ -27,6 +27,27 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    title: 'stem.org.uk',
+    description: 'The main STEM Learning website, serving teachers, students, and STEM professionals across the UK. Built with Next.js and TypeScript, with Contentful powering the content layer across programme pages, resources, and professional development.',
+    liveUrl: 'https://stem.org.uk',
+    technologies: ['Next.js', 'TypeScript', 'Contentful', 'Vercel'],
+    featured: true,
+  },
+  {
+    title: 'STEM Web User Profile',
+    description: 'Single sign-on platform unifying authentication across the STEM Learning suite of websites. Built with Auth0 to provide seamless login across TeachComputing.org, stem.org.uk, and STEM Ambassadors from a single account.',
+    liveUrl: 'https://account.stem.org.uk',
+    technologies: ['Auth0', 'Next.js', 'TypeScript', 'Vercel'],
+    featured: true,
+  },
+  {
+    title: 'STEM Ambassadors',
+    description: 'Platform connecting STEM professionals as volunteers with schools and colleges across the UK. Built with Next.js and Contentful, enabling ambassadors to register and schools to find and book STEM role models.',
+    liveUrl: 'https://ambassadors.stem.org.uk',
+    technologies: ['Next.js', 'TypeScript', 'Contentful', 'Vercel'],
+    featured: true,
+  },
+  {
     title: 'adamwheatley.net',
     description: 'This portfolio, built from scratch with Next.js and TypeScript. Custom terminal-green design system, scroll-tracked career timeline, and Vercel deployment. All written without a UI framework.',
     url: 'https://github.com/A-Wheeto/adamwheatley.net',

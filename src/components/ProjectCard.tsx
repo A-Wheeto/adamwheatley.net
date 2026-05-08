@@ -47,14 +47,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               ⬡ Live Demo
             </a>
           )}
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-card-link-secondary"
-          >
-            ◈ GitHub
-          </a>
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card-link-secondary"
+            >
+              ◈ GitHub
+            </a>
+          )}
         </div>
       </div>
     </div>

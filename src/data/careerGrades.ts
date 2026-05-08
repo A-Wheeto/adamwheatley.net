@@ -45,7 +45,7 @@ export const careerGrades: Grade[] = [
   },
   {
     grade: 'V6',
-    role: 'Full Stack Developer',
+    role: 'Full Stack Developer, STEM Learning',
     description: 'Full Stack Developer at STEM Learning, working across a suite of education websites. TeachComputing.org is built in Ruby on Rails with Strapi for content management. The STEM and STEM Ambassadors sites are Next.js frontends backed by Contentful. The STEM Web User Profile handles single sign-on across the whole platform using Auth0.',
     year: 'Oct 2025 - Present',
     skills: ['Ruby on Rails', 'Next.js', 'TypeScript', 'Auth0', 'Contentful', 'Strapi', 'Docker', 'Sentry', 'Vercel', 'Heroku']
