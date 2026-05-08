@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               url: 'https://adamwheatley.net',
               sameAs: [
                 'https://github.com/A-Wheeto',
-                'https://uk.linkedin.com/in/adam-wheatley-643810195',
+                'https://www.linkedin.com/in/adam-wheatley-643810195',
               ],
             }),
           }}
