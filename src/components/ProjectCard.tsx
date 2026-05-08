@@ -6,37 +6,47 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <a
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block p-6 md:p-8 no-underline"
-      style={{ display: 'block' }}
-    >
-      <div className="relative z-10 p-3">
-        {/* Project Title */}
-        <h3 className="text-xl md:text-2xl font-bold mb-3 text-stone-900 dark:text-stone-100">
-          {project.title}
-        </h3>
-
-        {/* Description */}
-        <p className="text-sm md:text-base text-stone-800 dark:text-stone-200 mb-4 leading-relaxed font-medium">
+    <div className="project-card">
+      <div className="project-card-body">
+        <div className="flex items-center gap-2 mb-2">
+          <h3 className="text-lg font-bold" style={{ color: '#e6edf3' }}>
+            {project.title}
+          </h3>
+          {project.badge && (
+            <span className="project-badge">{project.badge}</span>
+          )}
+        </div>
+        <p className="text-sm mb-4 leading-relaxed" style={{ color: 'var(--muted)' }}>
           {project.description}
         </p>
-
-        {/* Technologies */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-          {project.technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="block round fixed px-3 py-1.5 text-xs font-medium text-stone-800 dark:text-stone-200"
-              style={{ display: 'inline-block' }}
-            >
-              {tech}
-            </span>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.technologies.map((tech) => (
+            <span key={tech} className="skill-tag">{tech}</span>
           ))}
         </div>
+        <div className="project-card-links">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card-link-primary"
+            >
+              ⬡ Live Demo
+            </a>
+          )}
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card-link-secondary"
+            >
+              ◈ GitHub
+            </a>
+          )}
+        </div>
       </div>
-    </a>
+    </div>
   )
 }
