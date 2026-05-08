@@ -25,10 +25,10 @@ export default function ProjectsPage() {
         My Routes
       </h1>
       <p className="text-sm mb-10 leading-relaxed" style={{ color: 'var(--muted)' }}>
-        A collection of full-stack applications built throughout my development journey — from Ruby on Rails backends to Next.js frontends.
+        A collection of full-stack applications built throughout my development journey, from Ruby on Rails backends to Next.js frontends.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
         {projects.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}

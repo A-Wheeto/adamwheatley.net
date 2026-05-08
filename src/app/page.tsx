@@ -50,7 +50,7 @@ export default function HomePage() {
           <p className="whoami-name">Adam Wheatley</p>
           <p className="whoami-role">Full-Stack Developer</p>
           <p className="whoami-bio">
-            IT support turned developer — I bring systems thinking to full-stack engineering with Rails and Next.js.
+            IT support turned developer. I bring systems thinking to full-stack engineering with Rails and Next.js.
           </p>
         </div>
 

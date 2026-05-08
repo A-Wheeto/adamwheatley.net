@@ -41,7 +41,7 @@ export default function ProgressIndicator({
     <div className="progress-mobile-bar">
       <div className="flex items-center justify-between">
         <span className="prog-label prog-label-active" style={{ fontSize: '11px' }}>
-          {grades[currentGrade].grade} — {grades[currentGrade].role}
+          {grades[currentGrade].grade}: {grades[currentGrade].role}
         </span>
         <div className="flex gap-2 items-center">
           {grades.map((grade, index) => (

@@ -20,7 +20,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Pinpoint → HiBob Integration',
-    description: 'Serverless webhook built with Ruby on AWS Lambda and API Gateway. When a candidate is hired in Pinpoint, the function automatically creates their employee record in HiBob, uploads their CV, and logs the result to CloudWatch — with multi-layered error handling throughout.',
+    description: 'Serverless webhook built with Ruby on AWS Lambda and API Gateway. When a candidate is hired in Pinpoint, the function automatically creates their employee record in HiBob, uploads their CV, and logs the result to CloudWatch, with multi-layered error handling throughout.',
     url: 'https://github.com/A-Wheeto/Pinpoint-Webhook',
     imageUrl: '/images/projects/pinpoint-hibob.png',
     technologies: ['Ruby', 'AWS Lambda', 'API Gateway', 'Serverless', 'REST APIs', 'CloudWatch'],
@@ -28,7 +28,7 @@ export const projects: Project[] = [
   },
   {
     title: 'adamwheatley.net',
-    description: 'This portfolio, built from scratch with Next.js and TypeScript. Custom terminal-green design system, scroll-tracked career timeline, and Vercel deployment — all written without a UI framework.',
+    description: 'This portfolio, built from scratch with Next.js and TypeScript. Custom terminal-green design system, scroll-tracked career timeline, and Vercel deployment. All written without a UI framework.',
     url: 'https://github.com/A-Wheeto/adamwheatley.net',
     liveUrl: 'https://adamwheatley.net',
     imageUrl: '/images/projects/portfolio.png',

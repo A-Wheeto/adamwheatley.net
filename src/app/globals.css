@@ -366,21 +366,22 @@ body {
 }
 
 .whoami-name {
-  font-size: 28px;
+  font-size: 64px;
   font-weight: bold;
   color: #e6edf3;
   margin-bottom: 4px;
+  line-height: 1.1;
 }
 
 .whoami-role {
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 22px;
   color: var(--green);
   margin-bottom: 10px;
 }
 
 .whoami-bio {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--muted);
   line-height: 1.6;
   max-width: 540px;
@@ -409,6 +410,7 @@ body {
   object-position: top;
   display: block;
   border-bottom: 1px solid var(--border);
+  filter: brightness(0.55) saturate(0.8);
 }
 
 .project-card-body {

@@ -3,15 +3,15 @@ import { Grade } from '@/types/career'
 export const careerGrades: Grade[] = [
   {
     grade: 'V0',
-    role: 'Adam Wheatley',
-    description: "Welcome to my climbing journey. In bouldering, grades start at V0 and progress upward with difficulty. This portfolio mirrors that system—each section represents a grade in my career climb from IT support to full-stack development. Like solving a challenging boulder problem, every role taught me that persistence and the right approach can overcome any obstacle.",
+    role: 'The Approach',
+    description: "Welcome to my climbing journey. In bouldering, grades start at V0 and progress upward with difficulty. This portfolio mirrors that system. Each section represents a grade in my career climb from IT support to full-stack development. Like solving a challenging boulder problem, every role taught me that persistence and the right approach can overcome any obstacle.",
     year: 'The Journey Begins',
     skills: ['Bouldering Enthusiast', 'Guitarist', 'Drummer', 'Problem Solver', 'Creative Thinker', 'Detail Oriented', 'Team Player', 'Quick Learner', 'Adaptable', 'Passionate']
   },
   {
     grade: 'V1',
     role: 'IT Analyst - Aviva',
-    description: 'First role in tech: 1st line IT support across UK, Ireland, and globally for a major insurance firm. High-volume call handling — diagnosing desktop, laptop, Citrix, RDP, and Virtual Machine issues under pressure. Built the troubleshooting instincts that still shape how I approach every problem.',
+    description: 'First role in tech: 1st line IT support across UK, Ireland, and globally for a major insurance firm. High-volume call handling, diagnosing desktop, laptop, Citrix, RDP, and Virtual Machine issues under pressure. Built the troubleshooting instincts that still shape how I approach every problem.',
     year: 'Nov 2018 - Nov 2019',
     skills: ['High Volume Support', 'Windows 7/10', 'Citrix & RDP', 'Active Directory', 'Mobile Support', 'Ticket Management', 'Virtual Machines', 'Hardware Diagnostics', 'Customer Service']
   },
@@ -25,7 +25,7 @@ export const careerGrades: Grade[] = [
   {
     grade: 'V3',
     role: 'Support Engineer - Cloud Design Box',
-    description: 'Specialised in automated SharePoint solutions for schools and businesses, integrating with MIS systems via Microsoft Data Sync. Led client onboarding end-to-end — cutting manual setup from days to hours through automation. The crux where cloud infrastructure met real-world delivery.',
+    description: 'Specialised in automated SharePoint solutions for schools and businesses, integrating with MIS systems via Microsoft Data Sync. Led client onboarding end-to-end, cutting manual setup from days to hours through automation. The crux where cloud infrastructure met real-world delivery.',
     year: 'Aug 2022 - Sep 2023',
     skills: ['SharePoint Design', 'MS Data Sync', 'MIS Integration', 'Client Onboarding', 'Permissions Mgmt', 'Consultations', 'PowerShell', 'Office 365 Admin', 'Cloud Architecture', 'Client Relations']
   },
@@ -46,7 +46,7 @@ export const careerGrades: Grade[] = [
   {
     grade: 'V6',
     role: 'Full Stack Developer',
-    description: 'Summit reached! Ruby on Rails backend expertise combined with Next.js frontend mastery. Building complete solutions from concept to deployment — including this portfolio. Delivering agency work that combines technical excellence with creative problem-solving.',
+    description: 'Summit reached! Ruby on Rails backend expertise combined with Next.js frontend mastery. Building complete solutions from concept to deployment, including this portfolio. Delivering agency work that combines technical excellence with creative problem-solving.',
     year: 'Oct 2025 - Present',
     skills: ['Next.js', 'TypeScript', 'Full Stack', 'Cloud Deploy', 'CI/CD', 'Vercel', 'React', 'Tailwind CSS', 'API Development', 'Modern Tooling']
   },
