@@ -4,6 +4,7 @@ import NavBar from '@/components/NavBar'
 import BackgroundLayers from '@/components/BackgroundLayers'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://adamwheatley.net'),
   title: {
     default: 'Adam Wheatley | Full-Stack Developer',
     template: '%s | Adam Wheatley',
@@ -28,6 +29,14 @@ export const metadata: Metadata = {
     title: 'Adam Wheatley | Full-Stack Developer',
     description: 'Full-Stack Developer specialising in Ruby on Rails and Next.js',
     siteName: 'Adam Wheatley Portfolio',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Adam Wheatley — Full-Stack Developer',
+      },
+    ],
   },
 }
 
