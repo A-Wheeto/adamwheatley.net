@@ -44,6 +44,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="scroll-smooth">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Adam Wheatley',
+              jobTitle: 'Full-Stack Developer',
+              url: 'https://adamwheatley.net',
+              sameAs: [
+                'https://github.com/A-Wheeto',
+                'https://uk.linkedin.com/in/adam-wheatley-643810195',
+              ],
+            }),
+          }}
+        />
         <BackgroundLayers />
         <NavBar />
         <main style={{ position: 'relative', zIndex: 1 }}>
