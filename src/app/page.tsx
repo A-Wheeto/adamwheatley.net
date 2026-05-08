@@ -50,7 +50,7 @@ export default function HomePage() {
           <p className="whoami-name">Adam Wheatley</p>
           <p className="whoami-role">Full-Stack Developer</p>
           <p className="whoami-bio">
-            IT support turned developer. I bring systems thinking to full-stack engineering with Rails and Next.js.
+            Seven years in tech, starting in IT support and working up to full-stack development. That foundation shapes how I write code: practical, user-aware, and built to last. I build with Ruby on Rails and Next.js, and I care about clean, well-tested solutions that actually solve problems. Outside of work I boulder, play guitar, and drum. The same mindset that gets me up a hard climb is what I bring to engineering. I&apos;m looking for a team where I can keep growing and work on things that matter.
           </p>
         </div>
 
