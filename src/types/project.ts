@@ -5,7 +5,7 @@ export interface Project {
   url?: string
   technologies: string[]
   featured?: boolean
-  imageUrl?: string
+
   liveUrl?: string
   badge?: string
 }

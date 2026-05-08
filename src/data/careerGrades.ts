@@ -10,35 +10,35 @@ export const careerGrades: Grade[] = [
   },
   {
     grade: 'V1',
-    role: 'IT Analyst - Aviva',
+    role: 'IT Analyst, Aviva',
     description: 'First role in tech: 1st line IT support across UK, Ireland, and globally for a major insurance firm. High-volume call handling, diagnosing desktop, laptop, Citrix, RDP, and Virtual Machine issues under pressure. Built the troubleshooting instincts that still shape how I approach every problem.',
     year: 'Nov 2018 - Nov 2019',
     skills: ['High Volume Support', 'Windows 7/10', 'Citrix & RDP', 'Active Directory', 'Mobile Support', 'Ticket Management', 'Virtual Machines', 'Hardware Diagnostics', 'Customer Service']
   },
   {
     grade: 'V2',
-    role: '2nd Line IT Support - Askham Bryan College',
+    role: '2nd Line IT Support, Askham Bryan College',
     description: 'Leveled up to supporting 2000+ students and 400 staff across five UK sites. Managed a busy walk-up IT support desk, handling everything from hardware issues to software problems across Windows, Mac, and Chromebooks. Focus on educating users to resolve issues independently.',
     year: 'Nov 2019 - Aug 2022',
     skills: ['2000+ Users', 'Multi-Platform', 'Mac OS', 'Chromebooks', 'User Training', 'Multi-Site Support', 'Hardware Repair', 'Software Deployment', 'Network Troubleshooting']
   },
   {
     grade: 'V3',
-    role: 'Support Engineer - Cloud Design Box',
+    role: 'Support Engineer, Cloud Design Box',
     description: 'Specialised in automated SharePoint solutions for schools and businesses, integrating with MIS systems via Microsoft Data Sync. Led client onboarding end-to-end, cutting manual setup from days to hours through automation. The crux where cloud infrastructure met real-world delivery.',
     year: 'Aug 2022 - Sep 2023',
     skills: ['SharePoint Design', 'MS Data Sync', 'MIS Integration', 'Client Onboarding', 'Permissions Mgmt', 'Consultations', 'PowerShell', 'Office 365 Admin', 'Cloud Architecture', 'Client Relations']
   },
   {
     grade: 'V4',
-    role: 'IT Application Support 3rd Line - STEM Learning',
+    role: 'IT Application Support 3rd Line, STEM Learning',
     description: 'Reached the summit of IT support, managing SharePoint, Office 365, Azure AD for 160+ employees. Led migration from network shares to SharePoint, extensive Microsoft Dynamics work including a 16-week development course. This was my springboard into development.',
     year: 'Sep 2023 - Mar 2024',
     skills: ['Azure AD', 'MS Dynamics', 'SharePoint Migration', 'Infrastructure', 'Linux', 'Intune', 'PowerAutomate', 'SQL Queries', 'Data Migration', 'Project Management']
   },
   {
     grade: 'V5',
-    role: 'Junior Ruby Developer - STEM Learning',
+    role: 'Junior Ruby Developer, STEM Learning',
     description: 'Made the leap to full development, building features for the Teach Computing website using Ruby on Rails, JavaScript, Stimulus, and CSS. Integrated Classmarker and Credly APIs, managed Heroku deployments, and maintained 96% test coverage with RSpec.',
     year: 'Mar 2024 - Oct 2025',
     skills: ['Ruby on Rails', 'JavaScript/Stimulus', 'RSpec', 'Heroku', 'API Integration', 'MS Dynamics', 'Git/GitHub', 'TDD', 'PostgreSQL', 'RESTful APIs']
