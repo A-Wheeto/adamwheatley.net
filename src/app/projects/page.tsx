@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 
 const currentlyClimbing = [
   { name: 'Ruby on Rails', description: 'Primary backend framework at STEM Learning, powering TeachComputing.org' },
-  { name: 'Next.js', description: 'Frontend framework for stem.org.uk, STEM Ambassadors, and this portfolio' },
+  { name: 'Next.js', description: 'Frontend framework for STEM Learning projects and this portfolio' },
   { name: 'TypeScript', description: 'Type-safe development across all Next.js projects' },
   { name: 'React', description: 'Component-based UI across all frontend projects' },
   { name: 'PostgreSQL', description: 'Relational database for TeachComputing.org and Rails projects' },
   { name: 'Auth0', description: 'Powers single sign-on authentication across the STEM Learning platform' },
-  { name: 'Contentful', description: 'Headless CMS backing stem.org.uk and STEM Ambassadors content' },
+  { name: 'Contentful', description: 'Headless CMS backing STEM Learning project content' },
   { name: 'Strapi', description: 'CMS integrated with TeachComputing.org for content management' },
   { name: 'Docker', description: 'Containerisation for consistent development and deployment environments' },
   { name: 'Sentry', description: 'Error monitoring and performance tracking across production applications' },
