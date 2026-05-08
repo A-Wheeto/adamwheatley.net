@@ -45,6 +45,15 @@ export default function HomePage() {
       />
 
       <div className="flex flex-col gap-6 py-10 px-4 md:px-12 pb-20 lg:pb-10">
+        <div className="whoami-block">
+          <p className="whoami-prompt">$ whoami</p>
+          <p className="whoami-name">Adam Wheatley</p>
+          <p className="whoami-role">Full-Stack Developer</p>
+          <p className="whoami-bio">
+            IT support turned developer — I bring systems thinking to full-stack engineering with Rails and Next.js.
+          </p>
+        </div>
+
         {careerGrades.map((grade, index) => (
           <section
             key={grade.grade}
