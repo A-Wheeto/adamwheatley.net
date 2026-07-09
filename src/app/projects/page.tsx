@@ -13,6 +13,7 @@ const currentlyClimbing = [
   { name: 'TypeScript', description: 'Type-safe development across all Next.js projects' },
   { name: 'React', description: 'Component-based UI across all frontend projects' },
   { name: 'PostgreSQL', description: 'Relational database for TeachComputing.org and Rails projects' },
+  { name: 'Neon', description: 'Serverless Postgres database powering ClipdIn' },
   { name: 'Auth0', description: 'Powers single sign-on authentication across the STEM Learning platform' },
   { name: 'Contentful', description: 'Headless CMS backing STEM Learning project content' },
   { name: 'Strapi', description: 'CMS integrated with TeachComputing.org for content management' },

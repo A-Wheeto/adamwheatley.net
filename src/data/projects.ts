@@ -2,6 +2,14 @@ import { Project } from '@/types/project'
 
 export const projects: Project[] = [
   {
+    title: 'ClipdIn',
+    description: 'A climbing partner matchmaking app that connects climbers for sessions indoors and out. Users browse real climbs happening nearby, RSVP to reserve a spot, and coordinate through group chats, or post their own sessions to find partners. Built with Next.js and TypeScript, backed by a Neon database, with Sentry error tracking and Vercel Analytics in production.',
+    liveUrl: 'https://clipdin.com',
+
+    technologies: ['Next.js', 'TypeScript', 'Vercel', 'Neon', 'Sentry', 'Vercel Analytics'],
+    featured: true,
+  },
+  {
     title: 'TeachComputing.org',
     description: 'The main website for the National Centre for Computing Education, serving thousands of UK computing teachers. Built course management features, integrated Classmarker and Credly APIs, and maintained 96% test coverage with comprehensive RSpec testing.',
     url: 'https://github.com/NCCE/teachcomputing.org',
